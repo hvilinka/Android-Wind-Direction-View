@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.bsvt.customview.Petal
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:angle="path_1_16"
+        app:color="#C69393"
+        app:direction="N"
+        app:margin="@dimen/margin"
+        app:border="@dimen/border"
+        app:power="percent_10"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.bsvt.customview.Petal
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:angle="path_1_16"
+        app:color="#E91E63"
+        app:direction="NNE"
+        app:border="@dimen/border"
+        app:margin="@dimen/margin"
+        app:power="percent_20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.bsvt.customview.Petal
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+
+        app:angle="path_1_16"
+        app:color="#9C27B0"
+        app:direction="NE"
+        app:margin="@dimen/margin"
+        app:border="@dimen/border"
+        app:power="percent_30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.bsvt.customview.Petal
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+
+        app:angle="path_1_16"
+        app:color="#3F51B5"
+        app:direction="ENE"
+        app:margin="@dimen/margin"
+        app:power="percent_40"
+        app:border="@dimen/border"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.bsvt.customview.Petal
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+
+        app:angle="path_1_16"
+        app:color="#2196F3"
+        app:direction="E"
+        app:margin="@dimen/margin"
+        app:power="percent_50"
+        app:border="@dimen/border"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <com.bsvt.customview.Petal
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+
+        app:angle="path_1_16"
+        app:color="#03A9F4"
+        app:direction="ESE"
+        app:margin="@dimen/margin"
+        app:power="percent_60"
+        app:border="@dimen/border"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <com.bsvt.customview.Petal
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+
+        app:angle="path_1_16"
+        app:color="#009688"
+        app:direction="SE"
+        app:margin="@dimen/margin"
+        app:power="percent_70"
+        app:border="@dimen/border"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.bsvt.customview.Petal
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+
+        app:angle="path_1_16"
+        app:color="#4CAF50"
+        app:direction="SSE"
+        app:margin="@dimen/margin"
+        app:power="percent_80"
+        app:border="@dimen/border"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.bsvt.customview.Petal
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+
+        app:angle="path_1_16"
+        app:color="#CDDC39"
+        app:direction="S"
+        app:margin="@dimen/margin"
+        app:power="percent_90"
+        app:border="@dimen/border"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.bsvt.customview.Petal
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+
+        app:angle="path_1_16"
+        app:color="#FFC107"
+        app:direction="SSW"
+        app:margin="@dimen/margin"
+        app:power="percent_100"
+        app:border="@dimen/border"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.bsvt.customview.Petal
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+
+        app:angle="path_1_16"
+        app:color="#FF9800"
+        app:direction="SW"
+        app:margin="@dimen/margin"
+        app:power="percent_90"
+        app:border="@dimen/border"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.bsvt.customview.Petal
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+
+        app:angle="path_1_16"
+        app:color="#FF5722"
+        app:direction="WSW"
+        app:margin="@dimen/margin"
+        app:power="percent_80"
+        app:border="@dimen/border"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.bsvt.customview.Petal
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+
+        app:angle="path_1_16"
+        app:color="#471EDC"
+        app:direction="W"
+        app:margin="@dimen/margin"
+        app:power="percent_70"
+        app:border="@dimen/border"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.bsvt.customview.Petal
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+
+        app:angle="path_1_16"
+        app:color="#737373"
+        app:direction="WNW"
+        app:margin="@dimen/margin"
+        app:power="percent_60"
+        app:border="@dimen/border"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.bsvt.customview.Petal
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+
+        app:angle="path_1_16"
+        app:color="#DDD8ED"
+        app:direction="NW"
+        app:margin="@dimen/margin"
+        app:power="percent_50"
+        app:border="@dimen/border"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.bsvt.customview.Petal
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+
+        app:angle="path_1_16"
+        app:color="#000000"
+        app:direction="NNW"
+        app:margin="@dimen/margin"
+        app:power="percent_50"
+        app:border="@dimen/border"
+        app:borderColor="#FFEB3B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

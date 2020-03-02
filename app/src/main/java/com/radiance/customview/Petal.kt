@@ -1,11 +1,11 @@
-package com.bsvt.customview
+package com.radiance.customview
 
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import androidx.annotation.FloatRange
-import com.bsvt.customview.externals.*
+import com.radiance.customview.externals.*
 import kotlin.math.cos
 import kotlin.math.sin
 
@@ -49,40 +49,40 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
             draw()
         }
 
+    //
     var border = defaultBorder
         set(value) {
             field = value
             draw()
         }
 
-    private var margin = defaultMargin
+    //
+    var margin = defaultMargin
         set(value) {
             field = value
             draw()
         }
 
-    private var topStyle: TopStyle = defaultTopStyle
+    //
+    var topStyle: TopStyle = defaultTopStyle
         set(value) {
             field = value
             draw()
         }
 
-    private var bottomStyle = defaultBottomStyle
+    //
+    var bottomStyle = defaultBottomStyle
         set(value) {
             field = value
             draw()
         }
 
-    private var bottomRadius = defaultBottomRadius
+    //todo make private
+    var bottomRadius = defaultBottomRadius
         set(value) {
             field = value
             draw()
         }
-
-    private fun draw() {
-        invalidate()
-        requestLayout()
-    }
 
     init {
         setupAttributes(context, attrs)
@@ -93,6 +93,11 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
         drawPetal(canvas)
         drawBorder(canvas)
+    }
+
+    private fun draw() {
+        invalidate()
+        requestLayout()
     }
 
     private fun drawPetal(canvas: Canvas?) {

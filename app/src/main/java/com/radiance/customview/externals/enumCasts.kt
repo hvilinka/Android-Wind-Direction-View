@@ -1,6 +1,6 @@
-package com.bsvt.customview.externals
+package com.radiance.customview.externals
 
-import com.bsvt.customview.Petal
+import com.radiance.customview.Petal
 
 fun Int.toAngleEnum(): Petal.Angle {
     return when(this) {

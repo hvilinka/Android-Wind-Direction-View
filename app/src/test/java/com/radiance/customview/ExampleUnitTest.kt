@@ -1,4 +1,4 @@
-package com.bsvt.customview
+package com.radiance.customview
 
 import org.junit.Test
 

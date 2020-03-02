@@ -1,107 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SinglePetal">
+    tools:context=".ui.Petal_1_8">
 
-    <com.bsvt.customview.Petal
+    <com.radiance.customview.Petal
         android:id="@+id/N"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
         app:angle="path_1_8"
-        app:border="@dimen/border_1_8"
         app:color="#93AC90"
         app:direction="N"
-        app:margin="@dimen/margin_1_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        
         app:power="percent_100" />
 
-    <com.bsvt.customview.Petal
+
+    <com.radiance.customview.Petal
         android:id="@+id/NE"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
         app:angle="path_1_8"
-        app:border="@dimen/border_1_8"
+        
         app:color="#93AC90"
         app:direction="NE"
-        app:margin="@dimen/margin_1_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        
         app:power="percent_80" />
 
-    <com.bsvt.customview.Petal
+
+    <com.radiance.customview.Petal
         android:id="@+id/E"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
         app:angle="path_1_8"
-        app:border="@dimen/border_1_8"
+        
         app:color="#93AC90"
         app:direction="E"
-        app:margin="@dimen/margin_1_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        
         app:power="percent_60" />
 
 
-    <com.bsvt.customview.Petal
+    <com.radiance.customview.Petal
         android:id="@+id/SE"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
         app:angle="path_1_8"
-        app:border="@dimen/border_1_8"
+        
         app:color="#93AC90"
         app:direction="SE"
-        app:margin="@dimen/margin_1_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        
         app:power="percent_40" />
 
 
-    <com.bsvt.customview.Petal
+    <com.radiance.customview.Petal
         android:id="@+id/S"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
         app:angle="path_1_8"
-        app:border="@dimen/border_1_8"
+        
         app:color="#93AC90"
         app:direction="S"
-        app:margin="@dimen/margin_1_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        
         app:power="percent_20" />
 
-    <com.bsvt.customview.Petal
+
+    <com.radiance.customview.Petal
         android:id="@+id/SW"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
         app:angle="path_1_8"
-        app:border="@dimen/border_1_8"
+        
         app:color="#93AC90"
         app:direction="SW"
-        app:margin="@dimen/margin_1_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        
         app:power="percent_50" />
 
-    <com.bsvt.customview.Petal
+
+    <com.radiance.customview.Petal
         android:id="@+id/W"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
         app:angle="path_1_8"
-        app:border="@dimen/border_1_8"
+        
         app:color="#93AC90"
         app:direction="W"
-        app:margin="@dimen/margin_1_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        
         app:power="percent_70" />
 
-    <com.bsvt.customview.Petal
+
+    <com.radiance.customview.Petal
         android:id="@+id/NW"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
         app:angle="path_1_8"
-        app:border="@dimen/border_1_8"
+        
         app:color="#93AC90"
         app:direction="NW"
-        app:margin="@dimen/margin_1_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        
         app:power="percent_80" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/topStyleTitle"
+        android:text="@string/topstyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/topStyleSeek"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topStyleSeek" />
+
+    <SeekBar
+        android:id="@+id/topStyleSeek"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:max="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bottomStyleTitle"
+        android:text="@string/bottomstyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/bottomStyleSeek"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottomStyleSeek" />
+
+    <SeekBar
+        android:id="@+id/bottomStyleSeek"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:max="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topStyleSeek" />
+
+    <TextView
+        android:id="@+id/bottomRadiusTitle"
+        android:text="@string/bottomradius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/bottomRadiusSeek"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottomRadiusSeek" />
+
+    <SeekBar
+        android:id="@+id/bottomRadiusSeek"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:max="50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottomStyleSeek" />
+
+    <TextView
+        android:id="@+id/marginTitle"
+        android:text="@string/margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/marginSeek"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/marginSeek" />
+
+    <SeekBar
+        android:id="@+id/marginSeek"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:max="50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottomRadiusSeek" />
+
+    <TextView
+        android:id="@+id/borderTitle"
+        android:text="@string/border"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/borderSeek"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/borderSeek" />
+
+    <SeekBar
+        android:id="@+id/borderSeek"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:max="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/marginSeek" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

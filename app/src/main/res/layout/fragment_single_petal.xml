@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SinglePetal">
+
+
+    <com.bsvt.customview.Petal
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:angle="path_1_16"
+        app:border="5dp"
+        app:bottomRadius="30dp"
+        app:bottomStyle="sector"
+        app:color="#93AC90"
+
+        app:direction="NE"
+        app:margin="@dimen/single_margin"
+        app:power="percent_100"
+
+        app:topStyle="sector" />
+
+    <com.bsvt.customview.Petal
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:angle="path_1_8"
+        app:border="4dp"
+        app:bottomRadius="30dp"
+        app:bottomStyle="sector"
+        app:color="#93AC90"
+        app:direction="SSE"
+
+        app:margin="@dimen/single_margin"
+        app:power="percent_100"
+        app:topStyle="flat" />
+</FrameLayout>

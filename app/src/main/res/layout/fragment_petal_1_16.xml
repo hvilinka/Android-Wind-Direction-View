@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SinglePetal">
+
+    <com.bsvt.customview.Petal
+        android:id="@+id/N"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:angle="path_1_16"
+        app:border="@dimen/border_1_16"
+        app:bottomRadius="@dimen/bottomRadius_1_16"
+        app:color="#93AC90"
+        app:direction="N"
+        app:margin="@dimen/margin_1_16"
+        app:power="percent_100"
+        app:topStyle="flat"/>
+
+    <com.bsvt.customview.Petal
+        android:id="@+id/NNE"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:angle="path_1_16"
+        app:border="@dimen/border_1_16"
+        app:bottomRadius="@dimen/bottomRadius_1_16"
+        app:color="#93AC90"
+        app:direction="NNE"
+        app:margin="@dimen/margin_1_16"
+        app:power="percent_90" 
+        app:topStyle="flat"/>
+
+    <com.bsvt.customview.Petal
+        android:id="@+id/NE"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:angle="path_1_16"
+        app:border="@dimen/border_1_16"
+        app:bottomRadius="@dimen/bottomRadius_1_16"
+        app:color="#93AC90"
+        app:direction="NE"
+        app:margin="@dimen/margin_1_16"
+        app:power="percent_80" 
+        app:topStyle="flat"/>
+
+    <com.bsvt.customview.Petal
+        android:id="@+id/ENE"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:angle="path_1_16"
+        app:border="@dimen/border_1_16"
+        app:bottomRadius="@dimen/bottomRadius_1_16"
+        app:color="#93AC90"
+        app:direction="ENE"
+        app:margin="@dimen/margin_1_16"
+        app:power="percent_70" 
+        app:topStyle="flat"/>
+
+    <com.bsvt.customview.Petal
+        android:id="@+id/E"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:angle="path_1_16"
+        app:border="@dimen/border_1_16"
+        app:bottomRadius="@dimen/bottomRadius_1_16"
+        app:color="#93AC90"
+        app:direction="E"
+        app:margin="@dimen/margin_1_16"
+        app:power="percent_60" 
+        app:topStyle="flat"/>
+
+    <com.bsvt.customview.Petal
+        android:id="@+id/ESE"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:angle="path_1_16"
+        app:border="@dimen/border_1_16"
+        app:bottomRadius="@dimen/bottomRadius_1_16"
+        app:color="#93AC90"
+        app:direction="ESE"
+        app:margin="@dimen/margin_1_16"
+        app:power="percent_50" 
+        app:topStyle="flat"/>
+
+
+    <com.bsvt.customview.Petal
+        android:id="@+id/SE"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:angle="path_1_16"
+        app:border="@dimen/border_1_16"
+        app:bottomRadius="@dimen/bottomRadius_1_16"
+        app:color="#93AC90"
+        app:direction="SE"
+        app:margin="@dimen/margin_1_16"
+        app:power="percent_40" 
+        app:topStyle="flat"/>
+
+
+    <com.bsvt.customview.Petal
+        android:id="@+id/SSE"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:angle="path_1_16"
+        app:border="@dimen/border_1_16"
+        app:bottomRadius="@dimen/bottomRadius_1_16"
+        app:color="#93AC90"
+        app:direction="SSE"
+        app:margin="@dimen/margin_1_16"
+        app:power="percent_30" 
+        app:topStyle="flat"/>
+
+    <com.bsvt.customview.Petal
+        android:id="@+id/S"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:angle="path_1_16"
+        app:border="@dimen/border_1_16"
+        app:bottomRadius="@dimen/bottomRadius_1_16"
+        app:color="#93AC90"
+        app:direction="S"
+        app:margin="@dimen/margin_1_16"
+        app:power="percent_20" 
+        app:topStyle="flat"/>
+
+    <com.bsvt.customview.Petal
+        android:id="@+id/SSW"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:angle="path_1_16"
+        app:border="@dimen/border_1_16"
+        app:bottomRadius="@dimen/bottomRadius_1_16"
+        app:color="#93AC90"
+        app:direction="SSW"
+        app:margin="@dimen/margin_1_16"
+        app:power="percent_10" 
+        app:topStyle="flat"/>
+
+    <com.bsvt.customview.Petal
+        android:id="@+id/SW"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:angle="path_1_16"
+        app:border="@dimen/border_1_16"
+        app:bottomRadius="@dimen/bottomRadius_1_16"
+        app:color="#93AC90"
+        app:direction="SW"
+        app:margin="@dimen/margin_1_16"
+        app:power="percent_50" 
+        app:topStyle="flat"/>
+
+    <com.bsvt.customview.Petal
+        android:id="@+id/WSW"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:angle="path_1_16"
+        app:border="@dimen/border_1_16"
+        app:bottomRadius="@dimen/bottomRadius_1_16"
+        app:color="#93AC90"
+        app:direction="WSW"
+        app:margin="@dimen/margin_1_16"
+        app:power="percent_60" 
+        app:topStyle="flat"/>
+
+    <com.bsvt.customview.Petal
+        android:id="@+id/W"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:angle="path_1_16"
+        app:border="@dimen/border_1_16"
+        app:bottomRadius="@dimen/bottomRadius_1_16"
+        app:color="#93AC90"
+        app:direction="W"
+        app:margin="@dimen/margin_1_16"
+        app:power="percent_70" 
+        app:topStyle="flat"/>
+
+    <com.bsvt.customview.Petal
+        android:id="@+id/WNW"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:angle="path_1_16"
+        app:border="@dimen/border_1_16"
+        app:bottomRadius="@dimen/bottomRadius_1_16"
+        app:color="#93AC90"
+        app:direction="WNW"
+        app:margin="@dimen/margin_1_16"
+        app:power="percent_60" 
+        app:topStyle="flat"/>
+
+    <com.bsvt.customview.Petal
+        android:id="@+id/NW"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:angle="path_1_16"
+        app:border="@dimen/border_1_16"
+        app:bottomRadius="@dimen/bottomRadius_1_16"
+        app:color="#93AC90"
+        app:direction="NW"
+        app:margin="@dimen/margin_1_16"
+        app:power="percent_80" 
+        app:topStyle="flat"/>
+
+    <com.bsvt.customview.Petal
+        android:id="@+id/NNW"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:angle="path_1_16"
+        app:border="@dimen/border_1_16"
+        app:bottomRadius="@dimen/bottomRadius_1_16"
+        app:color="#93AC90"
+        app:direction="NNW"
+        app:margin="@dimen/margin_1_16"
+        app:power="percent_90" 
+        app:topStyle="flat"/>
+</FrameLayout>

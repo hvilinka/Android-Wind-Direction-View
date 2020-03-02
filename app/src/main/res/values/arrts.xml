@@ -1,44 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="Petal">
-        <attr name="color" format="color"/>
-        <attr name="borderColor" format="color"/>
-        <attr name="border" format="dimension"/>
-        <attr name="margin" format="dimension"/>
+        <attr name="color" format="color" />
+        <attr name="borderColor" format="color" />
+        <attr name="border" format="dimension" />
+        <attr name="margin" format="dimension" />
         <attr name="angle" format="enum">
-            <enum name="path_1_8" value="0"/>
-            <enum name="path_1_16" value="1"/>
+            <enum name="path_1_8" value="0" />
+            <enum name="path_1_16" value="1" />
         </attr>
         <attr name="direction" format="enum">
-            <enum name="N" value="0"/>
-            <enum name="NNE" value="1"/>
-            <enum name="NE" value="2"/>
-            <enum name="ENE" value="3"/>
-            <enum name="E" value="4"/>
-            <enum name="ESE" value="5"/>
-            <enum name="SE" value="6"/>
-            <enum name="SSE" value="7"/>
-            <enum name="S" value="8"/>
-            <enum name="SSW" value="9"/>
-            <enum name="SW" value="10"/>
-            <enum name="WSW" value="11"/>
-            <enum name="W" value="12"/>
-            <enum name="WNW" value="13"/>
-            <enum name="NW" value="14"/>
-            <enum name="NNW" value="15"/>
+            <enum name="N" value="0" />
+            <enum name="NNE" value="1" />
+            <enum name="NE" value="2" />
+            <enum name="ENE" value="3" />
+            <enum name="E" value="4" />
+            <enum name="ESE" value="5" />
+            <enum name="SE" value="6" />
+            <enum name="SSE" value="7" />
+            <enum name="S" value="8" />
+            <enum name="SSW" value="9" />
+            <enum name="SW" value="10" />
+            <enum name="WSW" value="11" />
+            <enum name="W" value="12" />
+            <enum name="WNW" value="13" />
+            <enum name="NW" value="14" />
+            <enum name="NNW" value="15" />
         </attr>
         <attr name="power" format="enum">
-            <enum name="percent_0" value="0"/>
-            <enum name="percent_10" value="1"/>
-            <enum name="percent_20" value="2"/>
-            <enum name="percent_30" value="3"/>
-            <enum name="percent_40" value="4"/>
-            <enum name="percent_50" value="5"/>
-            <enum name="percent_60" value="6"/>
-            <enum name="percent_70" value="7"/>
-            <enum name="percent_80" value="8"/>
-            <enum name="percent_90" value="9"/>
-            <enum name="percent_100" value="10"/>
+            <enum name="percent_0" value="0" />
+            <enum name="percent_10" value="1" />
+            <enum name="percent_20" value="2" />
+            <enum name="percent_30" value="3" />
+            <enum name="percent_40" value="4" />
+            <enum name="percent_50" value="5" />
+            <enum name="percent_60" value="6" />
+            <enum name="percent_70" value="7" />
+            <enum name="percent_80" value="8" />
+            <enum name="percent_90" value="9" />
+            <enum name="percent_100" value="10" />
         </attr>
+
+        <attr name="topStyle" format="enum">
+            <enum name="flat" value="0"/>
+            <enum name="sector" value="1"/>
+        </attr>
+
+        <attr name="bottomStyle" format="enum">
+            <enum name="flat" value="0"/>
+            <enum name="sector" value="1"/>
+        </attr>
+
+        <attr name="bottomRadius" format="dimension" />
+        <attr name="bottomLeftRadius" format="dimension"/>
+        <attr name="bottomRightRadius" format="dimension"/>
+        <attr name="topLeftRadius" format="dimension"/>
+        <attr name="topRightRadius" format="dimension"/>
+        <attr name="radius" format="dimension"/>
     </declare-styleable>
 </resources>

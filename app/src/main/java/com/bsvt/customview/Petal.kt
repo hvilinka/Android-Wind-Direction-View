@@ -6,7 +6,6 @@ import android.util.AttributeSet
 import android.view.View
 import kotlin.math.cos
 import kotlin.math.sin
-import kotlin.math.sqrt
 
 class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private val mainPaint = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -14,10 +13,16 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var power = defaultPower
     private var angle = defaultAngle
     private var directionCenter = defaultDirectionalityCenter
+
     private var color = defaultColor
     private var borderColor = defaultBorderColor
     private var border = defaultBorder
     private var margin = defaultMargin
+
+    private var topStyle: TopStyle = defaultTopStyle
+
+    private var bottomStyle = defaultBottomStyle
+    private var bottomRadius = defaultBottomRadius
 
     init {
         setupAttributes(context, attrs)
@@ -47,16 +52,76 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     private fun drawBasePetal(canvas: Canvas?, paint: Paint) {
         val b = margin / sin(Math.toRadians((angle / 2).toDouble()))
-
         val centerCorrection = calculateCenter(directionCenter, angle, margin)
 
         val x = (width.toFloat() / 2) + centerCorrection[0]
         val y = (height.toFloat() / 2) + centerCorrection[1]
-        val r = ((width.toFloat() / 2) - (margin + b)).toFloat()
+        val r = (((width.toFloat() / 2) - (margin + b)).toFloat()) * power
 
-        val oval = getOval(x, y, r * power)
+        val path = Path()
+
+        addTop(path, x, y, r, topStyle)
+        addBottom(path, x, y, r, bottomStyle)
+
+        canvas?.drawPath(path, paint)
+    }
+
+    private fun addBottom(path: Path, x: Float, y: Float, r: Float, style: BottomStyle) {
         val startAngle = directionCenter - (angle / 2)
-        canvas?.drawArc(oval, startAngle, angle, true, paint)
+        val endAngle = directionCenter + (angle / 2)
+
+        val leftStartX = r / 2 * cos(Math.toRadians(startAngle.toDouble()))
+        val leftStartY = r / 2 * sin(Math.toRadians(startAngle.toDouble()))
+        val leftEndX = bottomRadius * cos(Math.toRadians(startAngle.toDouble()))
+        val leftEndY = bottomRadius * sin(Math.toRadians(startAngle.toDouble()))
+        val endX = r / 2 * cos(Math.toRadians(endAngle.toDouble()))
+        val endY = r / 2 * sin(Math.toRadians(endAngle.toDouble()))
+        val rightEndX = bottomRadius * cos(Math.toRadians(endAngle.toDouble()))
+        val rightEndY = bottomRadius * sin(Math.toRadians(endAngle.toDouble()))
+
+        val oval = getOval(x, y, bottomRadius)
+
+        path.moveTo(x, y)
+        path.rMoveTo(leftStartX, leftStartY)
+
+        when (style) {
+            BottomStyle.Flat -> {
+                path.lineTo(x + leftEndX, y + leftEndY)
+                path.lineTo(x + rightEndX, y + rightEndY)
+            }
+            BottomStyle.Sector -> {
+                path.arcTo(oval, startAngle, angle)
+            }
+        }
+
+        path.lineTo(x + endX,y + endY)
+    }
+
+    private fun addTop(path: Path, x: Float, y: Float, r: Float, style: TopStyle) {
+        val startAngle = directionCenter - (angle / 2)
+        val endAngle = directionCenter + (angle / 2)
+
+        val startX = r / 2 * cos(Math.toRadians(startAngle.toDouble()))
+        val startY = r / 2 * sin(Math.toRadians(startAngle.toDouble()))
+        val leftCornerX = r * cos(Math.toRadians(startAngle.toDouble()))
+        val leftCornerY = r * sin(Math.toRadians(startAngle.toDouble()))
+        val rightCornerX = r * cos(Math.toRadians(endAngle.toDouble()))
+        val rightCornerY = r * sin(Math.toRadians(endAngle.toDouble()))
+        val endX = r / 2 * cos(Math.toRadians(endAngle.toDouble()))
+        val endY = r / 2 * sin(Math.toRadians(endAngle.toDouble()))
+
+        val oval = getOval(x, y, r)
+
+        path.moveTo(x, y)
+        path.rMoveTo(startX, startY)
+        path.rLineTo(leftCornerX - startX, leftCornerY - startY)
+
+        when(topStyle) {
+            TopStyle.Flat -> path.rLineTo(rightCornerX - leftCornerX, rightCornerY - leftCornerY)
+            TopStyle.Sector -> path.arcTo(oval, startAngle, angle)
+        }
+
+        path.rLineTo( endX - rightCornerX, endY - rightCornerY)
     }
 
     private fun setupAttributes(context: Context, attrs: AttributeSet?) {
@@ -69,6 +134,25 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
         borderColor = typedArray.getColor(R.styleable.Petal_borderColor, defaultBorderColor)
         border = typedArray.getDimensionPixelSize(R.styleable.Petal_border, defaultBorder.toInt()).toFloat()
         margin = typedArray.getDimensionPixelSize(R.styleable.Petal_margin, defaultMargin.toInt()).toFloat()
+        topStyle = getTopStyle(typedArray.getInteger(R.styleable.Petal_topStyle, defaultTopStyleEnum))
+        bottomStyle = getBottomStyle(typedArray.getInteger(R.styleable.Petal_bottomStyle, defaultBottomStyleEnum))
+        bottomRadius = typedArray.getDimensionPixelSize(R.styleable.Petal_bottomRadius, defaultBottomRadius.toInt()).toFloat()
+    }
+
+    private fun getBottomStyle(enum: Int): BottomStyle {
+        return when(enum) {
+            0 -> BottomStyle.Flat
+            1 -> BottomStyle.Sector
+            else -> defaultBottomStyle
+        }
+    }
+
+    private fun getTopStyle(enum: Int): TopStyle {
+        return when(enum) {
+            0 -> TopStyle.Flat
+            1 -> TopStyle.Sector
+            else -> defaultTopStyle
+        }
     }
 
     private fun getAngle(enum: Int): Float {
@@ -118,6 +202,8 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
         }
     }
 
+
+
     private fun getOval(x: Float, y: Float, r: Float): RectF {
         val oval = RectF()
 
@@ -152,5 +238,39 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
         private var defaultBorderColor = Color.BLACK
         private var defaultBorder = 0f
         private var defaultMargin = 0f
+
+        private var defaultTopStyle = TopStyle.Flat
+        private var defaultTopStyleEnum = 0
+
+        private var defaultBottomStyle = BottomStyle.Flat
+        private var defaultBottomStyleEnum = 0
+
+        private var defaultBottomRadius = 0f
     }
+
+    enum class TopStyle {
+        Flat,
+        Sector
+    }
+
+    enum class BottomStyle {
+        Flat,
+        Sector
+    }
+}
+
+private fun Path.lineTo(d: Double, d1: Double) {
+    lineTo(d.toFloat(), d1.toFloat())
+}
+
+private fun Path.rMoveTo(startX: Double, startY: Double) {
+    rMoveTo(startX.toFloat(), startY.toFloat())
+}
+
+private fun Path.moveTo(d: Double, d1: Double) {
+    moveTo(d.toFloat(), d1.toFloat())
+}
+
+private fun Path.rLineTo(d: Double, d1: Double) {
+    rLineTo(d.toFloat(), d1.toFloat())
 }

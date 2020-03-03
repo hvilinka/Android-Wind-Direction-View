@@ -1,18 +1,17 @@
 package com.radiance.customview.ui
 
 import android.annotation.SuppressLint
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
-import com.radiance.customview.Petal
+import com.radiance.customview.windDirections.petal.Petal
 
 import com.radiance.customview.R
-import com.radiance.customview.externals.toBottomStyle
-import com.radiance.customview.externals.toTopStyle
+import com.radiance.customview.windDirections.petal.toBottomStyle
+import com.radiance.customview.windDirections.petal.toTopStyle
 import kotlinx.android.synthetic.main.fragment_petal_1_8.*
 
 class Petal_1_8 : Fragment() {

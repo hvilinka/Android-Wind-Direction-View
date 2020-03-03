@@ -1,6 +1,4 @@
-package com.radiance.customview.externals
-
-import com.radiance.customview.Petal
+package com.radiance.customview.windDirections.petal
 
 fun Int.toAngleEnum(): Petal.Angle {
     return when(this) {

@@ -1,17 +1,15 @@
-package com.radiance.customview
+package com.radiance.customview.windDirections.petal
 
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import androidx.annotation.FloatRange
-import com.radiance.customview.externals.*
+import com.radiance.customview.R
 import kotlin.math.cos
 import kotlin.math.sin
 
 class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
-    private val mainPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-
     @FloatRange(from = 0.0, to = 1.0)
     var power = defaultPower
         set(value) {
@@ -19,23 +17,19 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
             draw()
         }
 
-    var angle: Angle = Angle.Angle_16
+    private var angle = Angle.Angle_16
         set(value) {
             angleValue = value.toDegrees()
             field = value
             draw()
         }
 
-    private var angleValue = defaultAngle
-
-    var direction: Direction = Direction.E
+    private var direction = Direction.E
         set(value) {
             directionCenterValue = value.toDegrees()
             field = value
             draw()
         }
-
-    private var directionCenterValue = defaultDirectionalityCenter
 
     var color = defaultColor
         set(value) {
@@ -49,44 +43,46 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
             draw()
         }
 
-    //
     var border = defaultBorder
         set(value) {
             field = value
             draw()
         }
 
-    //
     var margin = defaultMargin
         set(value) {
             field = value
             draw()
         }
 
-    //
-    var topStyle: TopStyle = defaultTopStyle
+    var topStyle: TopStyle =
+        defaultTopStyle
         set(value) {
             field = value
             draw()
         }
 
-    //
-    var bottomStyle = defaultBottomStyle
+    var bottomStyle =
+        defaultBottomStyle
         set(value) {
             field = value
             draw()
         }
 
-    //todo make private
     var bottomRadius = defaultBottomRadius
         set(value) {
             field = value
             draw()
         }
 
+    private var directionCenterValue = defaultDirectionalityCenter
+    private var angleValue = defaultAngle
+
     init {
         setupAttributes(context, attrs)
     }
+
+    private val mainPaint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
@@ -190,22 +186,46 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     private fun setupAttributes(context: Context, attrs: AttributeSet?) {
-        val typedArray = context.theme.obtainStyledAttributes(attrs, R.styleable.Petal, 0, 0)
+        val typedArray = context.theme.obtainStyledAttributes(
+            attrs,
+            R.styleable.Petal, 0, 0
+        )
 
-        power = typedArray.getInteger(R.styleable.Petal_power, defaultPowerEnum).toPower()
-        angle = typedArray.getInteger(R.styleable.Petal_angle, defaultAngleEnum).toAngleEnum()
-        direction = typedArray.getInteger(R.styleable.Petal_direction, defaultDirectionCenterEnum)
+        power = typedArray.getInteger(
+            R.styleable.Petal_power,
+            defaultPowerEnum
+        ).toPower()
+        angle = typedArray.getInteger(
+            R.styleable.Petal_angle,
+            defaultAngleEnum
+        ).toAngleEnum()
+        direction = typedArray.getInteger(
+            R.styleable.Petal_direction,
+            defaultDirectionCenterEnum
+        )
             .toDirection()
 
-        color = typedArray.getColor(R.styleable.Petal_color, defaultColor)
-        borderColor = typedArray.getColor(R.styleable.Petal_borderColor, defaultBorderColor)
+        color = typedArray.getColor(
+            R.styleable.Petal_color,
+            defaultColor
+        )
+        borderColor = typedArray.getColor(
+            R.styleable.Petal_borderColor,
+            defaultBorderColor
+        )
         border = typedArray.getDimensionPixelSize(R.styleable.Petal_border, defaultBorder.toInt())
             .toFloat()
         margin = typedArray.getDimensionPixelSize(R.styleable.Petal_margin, defaultMargin.toInt())
             .toFloat()
         topStyle =
-            typedArray.getInteger(R.styleable.Petal_topStyle, defaultTopStyleEnum).toTopStyle()
-        bottomStyle = typedArray.getInteger(R.styleable.Petal_bottomStyle, defaultBottomStyleEnum)
+            typedArray.getInteger(
+                R.styleable.Petal_topStyle,
+                defaultTopStyleEnum
+            ).toTopStyle()
+        bottomStyle = typedArray.getInteger(
+            R.styleable.Petal_bottomStyle,
+            defaultBottomStyleEnum
+        )
             .toBottomStyle()
         bottomRadius = typedArray.getDimensionPixelSize(
             R.styleable.Petal_bottomRadius,
@@ -247,10 +267,12 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
         private var defaultBorder = 0f
         private var defaultMargin = 0f
 
-        private var defaultTopStyle = TopStyle.Flat
+        private var defaultTopStyle =
+            TopStyle.Flat
         private var defaultTopStyleEnum = 0
 
-        private var defaultBottomStyle = BottomStyle.Flat
+        private var defaultBottomStyle =
+            BottomStyle.Flat
         private var defaultBottomStyleEnum = 0
 
         private var defaultBottomRadius = 0f

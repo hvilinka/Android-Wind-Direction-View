@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.Petal_1_16">
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/N"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,7 +15,7 @@
         app:direction="N"
         app:power="percent_100" />
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/NNE"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,7 +24,7 @@
         app:direction="NNE"
         app:power="percent_90" />
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/NE"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,7 +33,7 @@
         app:direction="NE"
         app:power="percent_80" />
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/ENE"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -42,7 +42,7 @@
         app:direction="ENE"
         app:power="percent_70" />
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/E"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -51,7 +51,7 @@
         app:direction="E"
         app:power="percent_60" />
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/ESE"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -63,7 +63,7 @@
         app:topStyle="flat" />
 
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/SE"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -73,7 +73,7 @@
         app:power="percent_40" />
 
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/SSE"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -82,7 +82,7 @@
         app:direction="SSE"
         app:power="percent_30" />
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/S"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -91,7 +91,7 @@
         app:direction="S"
         app:power="percent_20"/>
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/SSW"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -100,7 +100,7 @@
         app:direction="SSW"
         app:power="percent_10" />
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/SW"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -109,7 +109,7 @@
         app:direction="SW"
         app:power="percent_50" />
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/WSW"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -118,7 +118,7 @@
         app:direction="WSW"
         app:power="percent_60" />
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/W"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -127,7 +127,7 @@
         app:direction="W"
         app:power="percent_70" />
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/WNW"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -136,7 +136,7 @@
         app:direction="WNW"
         app:power="percent_60" />
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/NW"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -145,7 +145,7 @@
         app:direction="NW"
         app:power="percent_80" />
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/NNW"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -248,4 +248,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/marginSeek" />
+
+    <TextView
+        android:id="@+id/topLeftRadiusTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/topledtradius"
+        app:layout_constraintEnd_toStartOf="@+id/topLeftRadiusSeek"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topLeftRadiusSeek" />
+
+    <SeekBar
+        android:id="@+id/topLeftRadiusSeek"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:max="50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

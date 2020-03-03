@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.Petal_1_8">
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/N"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,7 +22,7 @@
         app:power="percent_100" />
 
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/NE"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -39,7 +39,7 @@
         app:power="percent_80" />
 
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/E"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -56,7 +56,7 @@
         app:power="percent_60" />
 
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/SE"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -73,7 +73,7 @@
         app:power="percent_40" />
 
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/S"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -90,7 +90,7 @@
         app:power="percent_20" />
 
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/SW"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -107,7 +107,7 @@
         app:power="percent_50" />
 
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/W"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -124,7 +124,7 @@
         app:power="percent_70" />
 
 
-    <com.radiance.customview.Petal
+    <com.radiance.customview.windDirections.petal.Petal
         android:id="@+id/NW"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

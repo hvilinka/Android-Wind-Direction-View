@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.radiance.customview.windDirections.petal.Petal
+        android:id="@+id/N"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:petal_angle="path_1_8"
+        app:petal_direction="N"
+        app:petal_power="percent_100" />
+
+    <com.radiance.customview.windDirections.petal.Petal
+        android:id="@+id/NE"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:petal_angle="path_1_8"
+        app:petal_direction="NE"
+        app:petal_power="percent_100" />
+
+    <com.radiance.customview.windDirections.petal.Petal
+        android:id="@+id/E"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:petal_angle="path_1_8"
+        app:petal_direction="E"
+        app:petal_power="percent_100" />
+
+    <com.radiance.customview.windDirections.petal.Petal
+        android:id="@+id/SE"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:petal_angle="path_1_8"
+        app:petal_direction="SE"
+        app:petal_power="percent_100" />
+
+    <com.radiance.customview.windDirections.petal.Petal
+        android:id="@+id/S"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:petal_angle="path_1_8"
+        app:petal_direction="S"
+        app:petal_power="percent_100" />
+
+    <com.radiance.customview.windDirections.petal.Petal
+        android:id="@+id/SW"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:petal_angle="path_1_8"
+        app:petal_direction="SW"
+        app:petal_power="percent_100" />
+
+    <com.radiance.customview.windDirections.petal.Petal
+        android:id="@+id/W"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:petal_angle="path_1_8"
+        app:petal_direction="W"
+        app:petal_power="percent_100" />
+
+    <com.radiance.customview.windDirections.petal.Petal
+        android:id="@+id/NW"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:petal_angle="path_1_8"
+        app:petal_direction="NW"
+        app:petal_power="percent_100" />
+
+    <com.bsvt.winddirections.grid.WindDirectionGrid
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</merge>

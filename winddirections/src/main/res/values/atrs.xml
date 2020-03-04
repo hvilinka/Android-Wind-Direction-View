@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <declare-styleable name="WindDirections">
+        <attr name="color" format="color" />
+        <attr name="borderColor" format="color" />
+        <attr name="border" format="dimension" />
+        <attr name="margin" format="dimension" />
+        <attr name="directionsCount" format="enum">
+            <enum name="eight" value="0" />
+            <enum name="sixteen" value="1" />
+        </attr>
+        <attr name="topStyle" format="enum">
+            <enum name="flat" value="0"/>
+            <enum name="sector" value="1"/>
+        </attr>
+
+        <attr name="bottomStyle" format="enum">
+            <enum name="flat" value="0"/>
+            <enum name="sector" value="1"/>
+        </attr>
+
+        <attr name="bottomRadius" format="dimension" />
+    </declare-styleable>
+
     <declare-styleable name="Petal">
         <attr name="petal_color" format="color" />
         <attr name="petal_borderColor" format="color" />

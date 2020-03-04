@@ -5,7 +5,7 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import androidx.annotation.FloatRange
-import com.radiance.customview.R
+import com.bsvt.winddirections.R
 import kotlin.math.cos
 import kotlin.math.sin
 
@@ -192,43 +192,43 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
         )
 
         power = typedArray.getInteger(
-            R.styleable.Petal_power,
+            R.styleable.Petal_petal_power,
             defaultPowerEnum
         ).toPower()
         angle = typedArray.getInteger(
-            R.styleable.Petal_angle,
+            R.styleable.Petal_petal_angle,
             defaultAngleEnum
         ).toAngleEnum()
         direction = typedArray.getInteger(
-            R.styleable.Petal_direction,
+            R.styleable.Petal_petal_direction,
             defaultDirectionCenterEnum
         )
             .toDirection()
 
         color = typedArray.getColor(
-            R.styleable.Petal_color,
+            R.styleable.Petal_petal_color,
             defaultColor
         )
         borderColor = typedArray.getColor(
-            R.styleable.Petal_borderColor,
+            R.styleable.Petal_petal_borderColor,
             defaultBorderColor
         )
-        border = typedArray.getDimensionPixelSize(R.styleable.Petal_border, defaultBorder.toInt())
+        border = typedArray.getDimensionPixelSize(R.styleable.Petal_petal_border, defaultBorder.toInt())
             .toFloat()
-        margin = typedArray.getDimensionPixelSize(R.styleable.Petal_margin, defaultMargin.toInt())
+        margin = typedArray.getDimensionPixelSize(R.styleable.Petal_petal_margin, defaultMargin.toInt())
             .toFloat()
         topStyle =
             typedArray.getInteger(
-                R.styleable.Petal_topStyle,
+                R.styleable.Petal_petal_topStyle,
                 defaultTopStyleEnum
             ).toTopStyle()
         bottomStyle = typedArray.getInteger(
-            R.styleable.Petal_bottomStyle,
+            R.styleable.Petal_petal_bottomStyle,
             defaultBottomStyleEnum
         )
             .toBottomStyle()
         bottomRadius = typedArray.getDimensionPixelSize(
-            R.styleable.Petal_bottomRadius,
+            R.styleable.Petal_petal_bottomRadius,
             defaultBottomRadius.toInt()
         ).toFloat()
     }

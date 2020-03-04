@@ -21,8 +21,6 @@ class Petal_1_8 : Fragment() {
     private var margin = 0
     private var border = 0
 
-    private var petals = ArrayList<Petal>()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,16 +30,6 @@ class Petal_1_8 : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        petals.clear()
-        petals.add(N)
-        petals.add(NE)
-        petals.add(E)
-        petals.add(SE)
-        petals.add(S)
-        petals.add(SW)
-        petals.add(W)
-        petals.add(NW)
     }
 
     @SuppressLint("SetTextI18n")
@@ -132,13 +120,11 @@ class Petal_1_8 : Fragment() {
         marginTitle.text = "${getString(R.string.margin)} (${margin})"
         borderTitle.text = "${getString(R.string.border)} (${border})"
 
-        for (petal in petals) {
-            petal.topStyle = topStyle
-            petal.bottomStyle = bottomStyle
-            petal.bottomRadius = bottomRadius.toFloat()
-            petal.margin = margin.toFloat()
-            petal.border = border.toFloat()
-        }
+        eight.margin = margin.toFloat()
+        eight.border = border.toFloat()
+        eight.topStyle = topStyle
+        eight.bottomStyle = bottomStyle
+        eight.bottomRadius = bottomRadius.toFloat()
     }
 
     private fun styleString(style: Petal.TopStyle): String {

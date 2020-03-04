@@ -1,5 +1,7 @@
 package com.radiance.customview.windDirections.petal
 
+import com.bsvt.winddirections.WindDirections
+
 fun Int.toAngleEnum(): Petal.Angle {
     return when(this) {
         0 -> Petal.Angle.Angle_8
@@ -60,5 +62,13 @@ fun Int.toBottomStyle(): Petal.BottomStyle {
         0 -> Petal.BottomStyle.Flat
         1 -> Petal.BottomStyle.Sector
         else -> Petal.BottomStyle.Flat
+    }
+}
+
+fun Int.toWindAngle(): WindDirections.Angle {
+    return when(this) {
+        0 -> WindDirections.Angle.Eight
+        1 -> WindDirections.Angle.Sixteen
+        else -> WindDirections.Angle.Eight
     }
 }

@@ -7,9 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
-import com.radiance.customview.windDirections.petal.Petal
-
 import com.radiance.customview.R
+import com.radiance.customview.windDirections.petal.Petal
 import com.radiance.customview.windDirections.petal.toBottomStyle
 import com.radiance.customview.windDirections.petal.toTopStyle
 import kotlinx.android.synthetic.main.fragment_petal_1_16.*
@@ -34,22 +33,22 @@ class Petal_1_16 : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         petals.clear()
-        petals.add(N)
-        petals.add(NNE)
-        petals.add(NE)
-        petals.add(ENE)
-        petals.add(E)
-        petals.add(ESE)
-        petals.add(SE)
-        petals.add(SSE)
-        petals.add(S)
-        petals.add(SSW)
-        petals.add(SW)
-        petals.add(WSW)
-        petals.add(W)
-        petals.add(WNW)
-        petals.add(NW)
-        petals.add(NNW)
+//        petals.add(N)
+//        petals.add(NNE)
+//        petals.add(NE)
+//        petals.add(ENE)
+//        petals.add(E)
+//        petals.add(ESE)
+//        petals.add(SE)
+//        petals.add(SSE)
+//        petals.add(S)
+//        petals.add(SSW)
+//        petals.add(SW)
+//        petals.add(WSW)
+//        petals.add(W)
+//        petals.add(WNW)
+//        petals.add(NW)
+//        petals.add(NNW)
     }
 
     @SuppressLint("SetTextI18n")
@@ -140,13 +139,11 @@ class Petal_1_16 : Fragment() {
         marginTitle.text = "${getString(R.string.margin)} (${margin})"
         borderTitle.text = "${getString(R.string.border)} (${border})"
 
-        for (petal in petals) {
-            petal.topStyle = topStyle
-            petal.bottomStyle = bottomStyle
-            petal.bottomRadius = bottomRadius.toFloat()
-            petal.margin = margin.toFloat()
-            petal.border = border.toFloat()
-        }
+        sixteen.margin = margin.toFloat()
+        sixteen.border = border.toFloat()
+        sixteen.topStyle = topStyle
+        sixteen.bottomStyle = bottomStyle
+        sixteen.bottomRadius = bottomRadius.toFloat()
     }
 
     private fun styleString(style: Petal.TopStyle): String {

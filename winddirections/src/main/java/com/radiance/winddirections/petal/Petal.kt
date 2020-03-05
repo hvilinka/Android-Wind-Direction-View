@@ -10,71 +10,119 @@ import com.radiance.customview.windDirections.petal.*
 import kotlin.math.cos
 import kotlin.math.sin
 
+/**
+ * View responsible for displaying one direction in a wind directions([com.radiance.winddirections.WindDirections])
+ *
+ * To display a petal in an activity, add a petal to the activity's layout XML file:
+ *
+ *      <com.radiance.winddirections.petal.Petal
+ *          android:id="@+id/petal_id"
+ *          android:layout_height="wrap_content"
+ *          android:layout_width="wrap_content"/>
+ *
+ * All XML style attributes available on Petal:
+ *
+ *      background_color    - type: Color (petal color)
+ *      border_color        - type: Color (petal border color)
+ *      border_size         - type: Dimension (petal border size)
+ *      margin              - type: Dimension (petal margin)
+ *      petal_angle         - type: Enum, value: path_1_8, path_1_16
+ *                            (petal angle size selection, path_1_8 = 45 dgr path_1_16 = 22.5 dgr)
+ *      petal_direction     - type: Enum, value: N, NNE, NE, ENE, E, ESE, SE, SSE,
+ *                                               S, SSW, SW, WSW, W, WNW, NW, NNW
+ *                            (petal compass direction)
+ *      petal_power         - type: Enum, value: percent_0, percent_10, percent_20, percent_30,
+ *                                               percent_40, percent_50, percent_60, percent_70,
+ *                                               percent_80, percent_90, percent_100
+ *                            (petal size)
+ *      petal_topStyle      - type: Enum, value: flat, sector (petal top style, flat - flat top,
+ *                            sector - top is path of circle)
+ *      petal_bottomStyle   - type: Enum, value: flat, sector (petal bottom style,
+ *                            flat - flat bottom, sector - bottom is path of circle)
+ *      petal_bottomRadius  - type: Dimension (radius of fillet of the petal bottom)
+ *
+ * @param context The Context the Petal is running in, through which it can
+ *        access the current theme, resources, etc.
+ * @param attrs The attributes of the XML Petal tag being used to inflate the view.
+ *
+ * @property power corresponds to petal_power attribute. Takes values for 0.0 to 1.0
+ * @property angle corresponds to petal_angle attribute.
+ * @property direction corresponds to petal_direction attribute.
+ * @property color corresponds to background_color attribute.
+ * @property borderColor corresponds to border_color attribute.
+ * @property border corresponds to border_size attribute.
+ * @property margin corresponds to margin attribute.
+ * @property topStyle corresponds to petal_topStyle attribute.
+ * @property bottomStyle corresponds to petal_bottomStyle attribute.
+ * @property bottomRadius corresponds to petal_bottomRadius attribute.
+ */
 class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
+    //region attributes
     @FloatRange(from = 0.0, to = 1.0)
     var power = defaultPower
         set(value) {
             field = value * 0.9f
-            draw()
+            updateView()
         }
 
-    private var angle = Angle.Angle_16
+    private var angle = Angle.Angle16
         set(value) {
             angleValue = value.toDegrees()
             field = value
-            draw()
+            updateView()
         }
 
     private var direction = Direction.E
         set(value) {
             directionCenterValue = value.toDegrees()
             field = value
-            draw()
+            updateView()
         }
 
     var color = defaultColor
         set(value) {
             field = value
-            draw()
+            updateView()
         }
 
     var borderColor = defaultBorderColor
         set(value) {
             field = value
-            draw()
+            updateView()
         }
 
     var border = defaultBorder
         set(value) {
             field = value
-            draw()
+            updateView()
         }
 
     var margin = defaultMargin
         set(value) {
             field = value
-            draw()
+            updateView()
         }
 
     var topStyle: TopStyle =
         defaultTopStyle
         set(value) {
             field = value
-            draw()
+            updateView()
         }
 
     var bottomStyle =
         defaultBottomStyle
         set(value) {
             field = value
-            draw()
+            updateView()
         }
 
     var bottomRadius = defaultBottomRadius
         set(value) {
             field = value
-            draw()
+            updateView()
         }
+    //endregion
 
     private var directionCenterValue = defaultDirectionalityCenter
     private var angleValue = defaultAngle
@@ -88,11 +136,15 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
 
-        drawPetal(canvas)
-        drawBorder(canvas)
+        if (power > 0) {
+            drawPetal(canvas)
+            if (border > 0) {
+                drawBorder(canvas)
+            }
+        }
     }
 
-    private fun draw() {
+    private fun updateView() {
         invalidate()
         requestLayout()
     }
@@ -101,7 +153,7 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
         mainPaint.color = color
         mainPaint.style = Paint.Style.FILL
 
-        drawBasePetal(canvas, paint = mainPaint)
+        drawPetalShape(canvas, paint = mainPaint)
     }
 
     private fun drawBorder(canvas: Canvas?) {
@@ -109,16 +161,17 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
         mainPaint.style = Paint.Style.STROKE
         mainPaint.strokeWidth = border
 
-        drawBasePetal(canvas, mainPaint)
+        drawPetalShape(canvas, mainPaint)
     }
 
-    private fun drawBasePetal(canvas: Canvas?, paint: Paint) {
+    private fun drawPetalShape(canvas: Canvas?, paint: Paint) {
         val b = margin / sin(Math.toRadians((angleValue / 2).toDouble()))
         val centerCorrection = calculateCenter(directionCenterValue, angleValue, margin)
 
         val x = (width.toFloat() / 2) + centerCorrection[0]
         val y = (height.toFloat() / 2) + centerCorrection[1]
-        val r = (((width.toFloat() / 2) - (margin + b)).toFloat()) * power
+        val minSize = if (width < height) width else height
+        val r = (((minSize / 2) - (margin + b)).toFloat()) * power
 
         val path = Path()
 
@@ -256,40 +309,31 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     companion object {
-        private var defaultPower = 1f
-        private var defaultPowerEnum = 10
-
-        private var defaultAngle = Angle.Angle_16.toDegrees()
-        private var defaultAngleEnum = 1
-
+        private var defaultPower                = 1f
+        private var defaultPowerEnum            = 10
+        private var defaultAngle                = Angle.Angle16.toDegrees()
+        private var defaultAngleEnum            = 1
         private var defaultDirectionalityCenter = 0f
-        private var defaultDirectionCenterEnum = 4
-
-
-        private var defaultColor = Color.BLACK
-        private var defaultBorderColor = Color.BLACK
-        private var defaultBorder = 0f
-        private var defaultMargin = 0f
-
-        private var defaultTopStyle =
-            TopStyle.Flat
-        private var defaultTopStyleEnum = 0
-
-        private var defaultBottomStyle =
-            BottomStyle.Flat
-        private var defaultBottomStyleEnum = 0
-
-        private var defaultBottomRadius = 0f
+        private var defaultDirectionCenterEnum  = 4
+        private var defaultColor                = Color.BLACK
+        private var defaultBorderColor          = Color.BLACK
+        private var defaultBorder               = 0f
+        private var defaultMargin               = 0f
+        private var defaultTopStyle             = TopStyle.Flat
+        private var defaultTopStyleEnum          = 0
+        private var defaultBottomStyle          = BottomStyle.Flat
+        private var defaultBottomStyleEnum      = 0
+        private var defaultBottomRadius         = 0f
     }
 
     enum class Angle {
-        Angle_16,
-        Angle_8;
+        Angle16,
+        Angle8;
 
         fun toDegrees(): Float {
             return when (this) {
-                Angle_16 -> 22.5F
-                Angle_8 -> 45.0F
+                Angle16 -> 22.5F
+                Angle8 -> 45.0F
             }
         }
     }

@@ -1,6 +1,5 @@
 package com.radiance.winddirections
 
-
 import android.content.Context
 import android.graphics.Color
 import android.util.AttributeSet
@@ -11,9 +10,8 @@ import com.radiance.winddirections.petal.Petal
 import com.radiance.customview.windDirections.petal.toBottomStyle
 import com.radiance.customview.windDirections.petal.toTopStyle
 import com.radiance.customview.windDirections.petal.toWindAngle
+
 class WindDirections(context: Context, attrs: AttributeSet) : FrameLayout(context, attrs) {
-    private val petalList = ArrayList<Petal>()
-    private var grid: WindDirectionGrid? = null
 
     var angle: Angle = defaultAngle
         set(value) {
@@ -93,6 +91,8 @@ class WindDirections(context: Context, attrs: AttributeSet) : FrameLayout(contex
             draw()
         }
 
+    private val petalList = ArrayList<Petal>()
+    private var grid: WindDirectionGrid? = null
 
     init {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -231,12 +231,12 @@ class WindDirections(context: Context, attrs: AttributeSet) : FrameLayout(contex
         //petal
         private const val defaultColor = Color.BLACK
         private const val defaultPetalBorderColor = Color.BLACK
-        private const val defaultPetalBorder = 0f
+        private const val defaultPetalBorder = 1f
         private const val defaultPetalMargin = 0f
-        private val defaultTopStyle = Petal.TopStyle.Flat
-        private const val defaultTopStyleEnum = 0
-        private val defaultBottomStyle = Petal.BottomStyle.Flat
-        private const val defaultBottomStyleEnum = 0
+        private val defaultTopStyle = Petal.TopStyle.Sector
+        private const val defaultTopStyleEnum = 1
+        private val defaultBottomStyle = Petal.BottomStyle.Sector
+        private const val defaultBottomStyleEnum = 1
         private const val defaultBottomRadius = 0f
         //grid
         private const val defaultTextSize = 40f
@@ -252,14 +252,14 @@ class WindDirections(context: Context, attrs: AttributeSet) : FrameLayout(contex
 
     data class WindPower (
         var N: Int = 0,
-        var NNE: Int = 0,
-        var NE: Int = 0,
-        var ENE: Int = 0,
-        var E: Int = 0,
-        var ESE: Int = 0,
-        var SE: Int = 0,
-        var SSE: Int = 0,
-        var S: Int = 0,
+        var NNE: Int = 15,
+        var NE: Int = 30,
+        var ENE: Int = 40,
+        var E: Int = 60,
+        var ESE: Int = 90,
+        var SE: Int = 100,
+        var SSE: Int = 60,
+        var S: Int = 40,
         var SSW: Int = 0,
         var SW: Int = 0,
         var WSW: Int = 0,

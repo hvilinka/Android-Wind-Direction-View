@@ -9,28 +9,31 @@ import android.util.AttributeSet
 import android.view.View
 import com.radiance.winddirections.R
 
+/**
+ *
+ */
 class WindDirectionGrid(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private val mainPaint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     var textSize = defaultTextSize
         set(value) {
             field = value
-            draw()
+            updateView()
         }
     var gridSize = defaultGridSize
         set(value) {
             field = value
-            draw()
+            updateView()
         }
     var gridColor = defaultGridColor
         set(value) {
             field = value
-            draw()
+            updateView()
         }
     var textColor = defaultTextColor
         set(value) {
             field = value
-            draw()
+            updateView()
         }
 
     init {
@@ -78,27 +81,27 @@ class WindDirectionGrid(context: Context, attrs: AttributeSet) : View(context, a
         mainPaint.textSize = textSize
         mainPaint.color = textColor
 
-        val minRadius = (if (width <= height) width.toFloat() else height.toFloat()) / 2
+        val radius = (if (width <= height) width.toFloat() else height.toFloat()) / 2
 
         val xN = width / 2f - textSize / 3f
-        val yN = (height / 2f) - minRadius + textSize
+        val yN = (height / 2f) - radius + textSize
         canvas?.drawText("N", xN, yN, mainPaint)
 
-        val xE = (width / 2f) + minRadius - textSize
+        val xE = (width / 2f) + radius - textSize
         val yE = (height / 2f) + textSize / 3
         canvas?.drawText("E", xE, yE, mainPaint)
 
         val xS = width / 2f - textSize / 4f
-        val yS = (height / 2f) + minRadius - (textSize / 5f)
+        val yS = (height / 2f) + radius - (textSize / 5f)
         canvas?.drawText("S", xS, yS, mainPaint)
 
 
-        val xW = (width / 2f) - minRadius + (textSize / 5f)
+        val xW = (width / 2f) - radius + (textSize / 5f)
         val yW = (height / 2f) + textSize / 3
         canvas?.drawText("W", xW, yW, mainPaint)
     }
 
-    private fun draw() {
+    private fun updateView() {
         invalidate()
         requestLayout()
     }
@@ -126,10 +129,10 @@ class WindDirectionGrid(context: Context, attrs: AttributeSet) : View(context, a
     }
 
     companion object {
-        var defaultTextSize = 40f
-        var defaultGridSize = 1f
-        var defaultGridColor = Color.BLACK
-        var defaultTextColor = Color.BLACK
+        var defaultTextSize     = 40f
+        var defaultGridSize     = 1f
+        var defaultGridColor    = Color.BLACK
+        var defaultTextColor    = Color.BLACK
     }
 
 }

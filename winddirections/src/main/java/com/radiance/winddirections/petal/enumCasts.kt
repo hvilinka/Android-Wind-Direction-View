@@ -5,9 +5,9 @@ import com.radiance.winddirections.petal.Petal
 
 fun Int.toAngleEnum(): Petal.Angle {
     return when(this) {
-        0 -> Petal.Angle.Angle_8
-        1 -> Petal.Angle.Angle_16
-        else -> Petal.Angle.Angle_16
+        0 -> Petal.Angle.Angle8
+        1 -> Petal.Angle.Angle16
+        else -> Petal.Angle.Angle16
     }
 }
 

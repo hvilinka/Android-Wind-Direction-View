@@ -1,6 +1,7 @@
 package com.radiance.customview.windDirections.petal
 
 import com.bsvt.winddirections.WindDirections
+import com.bsvt.winddirections.petal.Petal
 
 fun Int.toAngleEnum(): Petal.Angle {
     return when(this) {

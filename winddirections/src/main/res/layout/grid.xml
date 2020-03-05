@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.bsvt.winddirections.grid.WindDirectionGrid
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:text_size="15sp"
+        app:text_color="#FF1212"
+        app:grid_size="2dp"
+        app:grid_color="#62A812"
+        />
+</LinearLayout>

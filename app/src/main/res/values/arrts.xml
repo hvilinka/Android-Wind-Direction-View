@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="Petal">
-        <attr name="petal_color" format="color" />
+        <attr name="background_color" format="color" />
         <attr name="petal_borderColor" format="color" />
         <attr name="petal_border" format="dimension" />
-        <attr name="petal_margin" format="dimension" />
+        <attr name="margin" format="dimension" />
         <attr name="petal_angle" format="enum">
             <enum name="path_1_8" value="0" />
             <enum name="path_1_16" value="1" />

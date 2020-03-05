@@ -13,7 +13,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:directionsCount="eight"
-        app:color="@color/colorAccent"/>
+        app:petal_color="@color/colorAccent"/>
 
     <TextView
         android:id="@+id/topStyleTitle"

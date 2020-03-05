@@ -1,32 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="WindDirections">
-        <attr name="color" format="color" />
-        <attr name="borderColor" format="color" />
-        <attr name="border" format="dimension" />
-        <attr name="margin" format="dimension" />
+        <!--wind direction attrs-->
         <attr name="directionsCount" format="enum">
             <enum name="eight" value="0" />
             <enum name="sixteen" value="1" />
         </attr>
-        <attr name="topStyle" format="enum">
+        <!--petal attrs-->
+        <attr name="petal_color" format="color" />
+        <attr name="petal_border_color" format="color" />
+        <attr name="petal_border_size" format="dimension" />
+        <attr name="petal_margin" format="dimension" />
+        <attr name="petal_top_style" format="enum">
             <enum name="flat" value="0"/>
             <enum name="sector" value="1"/>
         </attr>
-
-        <attr name="bottomStyle" format="enum">
+        <attr name="petal_bottom_size" format="enum">
             <enum name="flat" value="0"/>
             <enum name="sector" value="1"/>
         </attr>
+        <attr name="petal_bottom_radius" format="dimension" />
+        <!--gris attrs-->
+        <attr name="grid_text_color" format="color"/>
+        <attr name="grid_line_color" format="color"/>
+        <attr name="grid_text_size" format="dimension"/>
+        <attr name="grid_line_size" format="dimension"/>
+    </declare-styleable>
 
-        <attr name="bottomRadius" format="dimension" />
+    <declare-styleable name="WindDirectionGrid">
+        <attr name="text_size" format="dimension"/>
+        <attr name="grid_size" format="dimension"/>
+        <attr name="grid_color" format="color"/>
+        <attr name="text_color" format="color"/>
     </declare-styleable>
 
     <declare-styleable name="Petal">
-        <attr name="petal_color" format="color" />
-        <attr name="petal_borderColor" format="color" />
-        <attr name="petal_border" format="dimension" />
-        <attr name="petal_margin" format="dimension" />
+        <attr name="background_color" format="color" />
+        <attr name="border_color" format="color" />
+        <attr name="border_size" format="dimension" />
+        <attr name="margin" format="dimension" />
         <attr name="petal_angle" format="enum">
             <enum name="path_1_8" value="0" />
             <enum name="path_1_16" value="1" />
@@ -62,22 +74,14 @@
             <enum name="percent_90" value="9" />
             <enum name="percent_100" value="10" />
         </attr>
-
         <attr name="petal_topStyle" format="enum">
             <enum name="flat" value="0"/>
             <enum name="sector" value="1"/>
         </attr>
-
         <attr name="petal_bottomStyle" format="enum">
             <enum name="flat" value="0"/>
             <enum name="sector" value="1"/>
         </attr>
-
         <attr name="petal_bottomRadius" format="dimension" />
-        <attr name="bottomLeftRadius" format="dimension"/>
-        <attr name="bottomRightRadius" format="dimension"/>
-        <attr name="topLeftRadius" format="dimension"/>
-        <attr name="topRightRadius" format="dimension"/>
-        <attr name="radius" format="dimension"/>
     </declare-styleable>
 </resources>

@@ -5,111 +5,111 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.radiance.customview.windDirections.petal.Petal
+    <com.bsvt.winddirections.petal.Petal
         android:id="@+id/N"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:petal_direction="N"
         app:petal_power="percent_100" />
 
-    <com.radiance.customview.windDirections.petal.Petal
+    <com.bsvt.winddirections.petal.Petal
         android:id="@+id/NNE"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:petal_direction="NNE"
         app:petal_power="percent_100" />
 
-    <com.radiance.customview.windDirections.petal.Petal
+    <com.bsvt.winddirections.petal.Petal
         android:id="@+id/NE"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:petal_direction="NE"
         app:petal_power="percent_100" />
 
-    <com.radiance.customview.windDirections.petal.Petal
+    <com.bsvt.winddirections.petal.Petal
         android:id="@+id/ENE"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:petal_direction="ENE"
         app:petal_power="percent_100" />
 
-    <com.radiance.customview.windDirections.petal.Petal
+    <com.bsvt.winddirections.petal.Petal
         android:id="@+id/E"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:petal_direction="E"
         app:petal_power="percent_100" />
-    <com.radiance.customview.windDirections.petal.Petal
+    <com.bsvt.winddirections.petal.Petal
         android:id="@+id/ESE"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:petal_direction="ESE"
         app:petal_power="percent_100" />
 
-    <com.radiance.customview.windDirections.petal.Petal
+    <com.bsvt.winddirections.petal.Petal
         android:id="@+id/SE"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:petal_direction="SE"
         app:petal_power="percent_100" />
 
-    <com.radiance.customview.windDirections.petal.Petal
+    <com.bsvt.winddirections.petal.Petal
         android:id="@+id/SSE"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:petal_direction="SSE"
         app:petal_power="percent_100" />
 
-    <com.radiance.customview.windDirections.petal.Petal
+    <com.bsvt.winddirections.petal.Petal
         android:id="@+id/S"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:petal_direction="S"
         app:petal_power="percent_100"/>
 
-    <com.radiance.customview.windDirections.petal.Petal
+    <com.bsvt.winddirections.petal.Petal
         android:id="@+id/SSW"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:petal_direction="SSW"
         app:petal_power="percent_100" />
 
-    <com.radiance.customview.windDirections.petal.Petal
+    <com.bsvt.winddirections.petal.Petal
         android:id="@+id/SW"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:petal_direction="SW"
         app:petal_power="percent_100" />
 
-    <com.radiance.customview.windDirections.petal.Petal
+    <com.bsvt.winddirections.petal.Petal
         android:id="@+id/WSW"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:petal_direction="WSW"
         app:petal_power="percent_100" />
 
-    <com.radiance.customview.windDirections.petal.Petal
+    <com.bsvt.winddirections.petal.Petal
         android:id="@+id/W"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:petal_direction="W"
         app:petal_power="percent_100" />
 
-    <com.radiance.customview.windDirections.petal.Petal
+    <com.bsvt.winddirections.petal.Petal
         android:id="@+id/WNW"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:petal_direction="WNW"
         app:petal_power="percent_100" />
 
-    <com.radiance.customview.windDirections.petal.Petal
+    <com.bsvt.winddirections.petal.Petal
         android:id="@+id/NW"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:petal_direction="NW"
         app:petal_power="percent_100" />
 
-    <com.radiance.customview.windDirections.petal.Petal
+    <com.bsvt.winddirections.petal.Petal
         android:id="@+id/NNW"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

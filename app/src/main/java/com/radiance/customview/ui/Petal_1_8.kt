@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
-import com.radiance.customview.windDirections.petal.Petal
+import com.bsvt.winddirections.petal.Petal
 
 import com.radiance.customview.R
 import com.radiance.customview.windDirections.petal.toBottomStyle
@@ -120,8 +120,8 @@ class Petal_1_8 : Fragment() {
         marginTitle.text = "${getString(R.string.margin)} (${margin})"
         borderTitle.text = "${getString(R.string.border)} (${border})"
 
-        eight.margin = margin.toFloat()
-        eight.border = border.toFloat()
+        eight.petalMargin = margin.toFloat()
+        eight.petalBorder = border.toFloat()
         eight.topStyle = topStyle
         eight.bottomStyle = bottomStyle
         eight.bottomRadius = bottomRadius.toFloat()

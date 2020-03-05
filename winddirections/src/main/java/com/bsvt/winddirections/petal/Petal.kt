@@ -1,4 +1,4 @@
-package com.radiance.customview.windDirections.petal
+package com.bsvt.winddirections.petal
 
 import android.content.Context
 import android.graphics.*
@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.annotation.FloatRange
 import com.bsvt.winddirections.R
+import com.radiance.customview.windDirections.petal.*
 import kotlin.math.cos
 import kotlin.math.sin
 
@@ -13,7 +14,7 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
     @FloatRange(from = 0.0, to = 1.0)
     var power = defaultPower
         set(value) {
-            field = value
+            field = value * 0.9f
             draw()
         }
 
@@ -206,16 +207,16 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
             .toDirection()
 
         color = typedArray.getColor(
-            R.styleable.Petal_petal_color,
+            R.styleable.Petal_background_color,
             defaultColor
         )
         borderColor = typedArray.getColor(
-            R.styleable.Petal_petal_borderColor,
+            R.styleable.Petal_border_color,
             defaultBorderColor
         )
-        border = typedArray.getDimensionPixelSize(R.styleable.Petal_petal_border, defaultBorder.toInt())
+        border = typedArray.getDimensionPixelSize(R.styleable.Petal_border_size, defaultBorder.toInt())
             .toFloat()
-        margin = typedArray.getDimensionPixelSize(R.styleable.Petal_petal_margin, defaultMargin.toInt())
+        margin = typedArray.getDimensionPixelSize(R.styleable.Petal_margin, defaultMargin.toInt())
             .toFloat()
         topStyle =
             typedArray.getInteger(

@@ -1,12 +1,11 @@
-package com.bsvt.winddirections.petal
+package com.radiance.winddirections.petal
 
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import androidx.annotation.FloatRange
-import com.bsvt.winddirections.R
-import com.bsvt.winddirections.WindDirections
+import com.radiance.winddirections.R
 import com.radiance.customview.windDirections.petal.*
 import kotlin.math.cos
 import kotlin.math.sin
@@ -123,8 +122,11 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
         val path = Path()
 
-        addTop(path, x, y, r, topStyle)
-        addBottom(path, x, y, r, bottomStyle)
+
+        if (bottomRadius < r) {
+            addTop(path, x, y, r, topStyle)
+            addBottom(path, x, y, r, bottomStyle)
+        }
 
         canvas?.drawPath(path, paint)
     }
@@ -135,7 +137,7 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
         val leftStartX = r / 2 * cos(Math.toRadians(startAngle.toDouble()))
         val leftStartY = r / 2 * sin(Math.toRadians(startAngle.toDouble()))
-        val leftEndX = bottomRadius * cos(Math.toRadians(startAngle.toDouble()))
+        val leftEndX =  bottomRadius * cos(Math.toRadians(startAngle.toDouble()))
         val leftEndY = bottomRadius * sin(Math.toRadians(startAngle.toDouble()))
         val endX = r / 2 * cos(Math.toRadians(endAngle.toDouble()))
         val endY = r / 2 * sin(Math.toRadians(endAngle.toDouble()))
@@ -179,7 +181,7 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
         path.rMoveTo(startX, startY)
         path.rLineTo(leftCornerX - startX, leftCornerY - startY)
 
-        when (topStyle) {
+        when (style) {
             TopStyle.Flat -> path.rLineTo(rightCornerX - leftCornerX, rightCornerY - leftCornerY)
             TopStyle.Sector -> path.arcTo(oval, startAngle, angleValue)
         }

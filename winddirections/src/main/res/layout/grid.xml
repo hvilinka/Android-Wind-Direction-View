@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.bsvt.winddirections.grid.WindDirectionGrid
+    <com.radiance.winddirections.grid.WindDirectionGrid
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:text_size="15sp"

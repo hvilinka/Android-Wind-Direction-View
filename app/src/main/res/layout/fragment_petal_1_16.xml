@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.Petal_1_16">
 
-    <com.bsvt.winddirections.WindDirections
+    <com.radiance.winddirections.WindDirections
         android:id="@+id/sixteen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

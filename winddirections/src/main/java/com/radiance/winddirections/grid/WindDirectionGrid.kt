@@ -1,4 +1,4 @@
-package com.bsvt.winddirections.grid
+package com.radiance.winddirections.grid
 
 import android.content.Context
 import android.graphics.Canvas
@@ -7,7 +7,7 @@ import android.graphics.Paint
 import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
-import com.bsvt.winddirections.R
+import com.radiance.winddirections.R
 
 class WindDirectionGrid(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private val mainPaint = Paint(Paint.ANTI_ALIAS_FLAG)

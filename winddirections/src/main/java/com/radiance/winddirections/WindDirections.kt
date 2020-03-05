@@ -1,4 +1,4 @@
-package com.bsvt.winddirections
+package com.radiance.winddirections
 
 
 import android.content.Context
@@ -6,8 +6,8 @@ import android.graphics.Color
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
-import com.bsvt.winddirections.grid.WindDirectionGrid
-import com.bsvt.winddirections.petal.Petal
+import com.radiance.winddirections.grid.WindDirectionGrid
+import com.radiance.winddirections.petal.Petal
 import com.radiance.customview.windDirections.petal.toBottomStyle
 import com.radiance.customview.windDirections.petal.toTopStyle
 import com.radiance.customview.windDirections.petal.toWindAngle

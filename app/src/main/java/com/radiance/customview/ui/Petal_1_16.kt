@@ -7,9 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
-import com.bsvt.winddirections.WindDirections
+import com.radiance.winddirections.WindDirections
 import com.radiance.customview.R
-import com.bsvt.winddirections.petal.Petal
+import com.radiance.winddirections.petal.Petal
 import com.radiance.customview.windDirections.petal.toBottomStyle
 import com.radiance.customview.windDirections.petal.toTopStyle
 import kotlinx.android.synthetic.main.fragment_petal_1_16.*
@@ -23,13 +23,12 @@ import kotlinx.android.synthetic.main.fragment_petal_1_16.marginSeek
 import kotlinx.android.synthetic.main.fragment_petal_1_16.marginTitle
 import kotlinx.android.synthetic.main.fragment_petal_1_16.topStyleSeek
 import kotlinx.android.synthetic.main.fragment_petal_1_16.topStyleTitle
-import kotlinx.android.synthetic.main.fragment_petal_1_8.*
 
 class Petal_1_16 : Fragment() {
     private var topStyle = Petal.TopStyle.Sector
     private var bottomStyle = Petal.BottomStyle.Sector
     private var bottomRadius = 0
-    private var margin = 1
+    private var margin = 0
     private var border = 1
 
     private var petals = ArrayList<Petal>()

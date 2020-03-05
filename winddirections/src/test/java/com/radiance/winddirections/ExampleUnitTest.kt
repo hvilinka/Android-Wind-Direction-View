@@ -1,4 +1,4 @@
-package com.bsvt.winddirections
+package com.radiance.winddirections
 
 import org.junit.Test
 

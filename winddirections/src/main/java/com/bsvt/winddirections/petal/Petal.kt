@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.annotation.FloatRange
 import com.bsvt.winddirections.R
+import com.bsvt.winddirections.WindDirections
 import com.radiance.customview.windDirections.petal.*
 import kotlin.math.cos
 import kotlin.math.sin

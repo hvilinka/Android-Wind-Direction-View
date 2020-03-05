@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
+import com.bsvt.winddirections.WindDirections
 import com.bsvt.winddirections.petal.Petal
 
 import com.radiance.customview.R
@@ -15,11 +16,11 @@ import com.radiance.customview.windDirections.petal.toTopStyle
 import kotlinx.android.synthetic.main.fragment_petal_1_8.*
 
 class Petal_1_8 : Fragment() {
-    private var topStyle = Petal.TopStyle.Flat
-    private var bottomStyle = Petal.BottomStyle.Flat
+    private var topStyle = Petal.TopStyle.Sector
+    private var bottomStyle = Petal.BottomStyle.Sector
     private var bottomRadius = 0
-    private var margin = 0
-    private var border = 0
+    private var margin = 1
+    private var border = 1
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -110,6 +111,21 @@ class Petal_1_8 : Fragment() {
             }
 
         })
+
+        setStyle()
+
+        val windPower = WindDirections.WindPower().apply {
+            N = 400
+            NE = 500
+            E = 234
+            SE = 100
+            S = 50
+            SW = 0
+            W = 0
+            NW = 30
+        }
+
+        eight.windPower = windPower
     }
 
     @SuppressLint("SetTextI18n")

@@ -21,6 +21,15 @@ class WindDirections(context: Context, attrs: AttributeSet) : FrameLayout(contex
             draw()
         }
 
+    var windPower: WindPower = WindPower()
+        set(value) {
+            field = value
+            windPowerPercent = value.toPercent()
+            draw()
+        }
+
+    private var windPowerPercent = WindPower()
+
     var petalColor = defaultColor
         set(value) {
             field = value
@@ -97,6 +106,7 @@ class WindDirections(context: Context, attrs: AttributeSet) : FrameLayout(contex
 
         getChildList()
         setChildStyle()
+        setWindPower()
     }
 
     private fun setAttributes(context: Context, attrs: AttributeSet) {
@@ -154,8 +164,62 @@ class WindDirections(context: Context, attrs: AttributeSet) : FrameLayout(contex
         grid?.gridSize = gridLineSize
     }
 
+    private fun setWindPower() {
+        for (petal in petalList) {
+            if (petal.id == R.id.N) {
+                petal.power = windPowerPercent.N / 100f
+            }
+            if (petal.id == R.id.NNE) {
+                petal.power = windPowerPercent.NNE / 100f
+            }
+            if (petal.id == R.id.NE) {
+                petal.power = windPowerPercent.NE / 100f
+            }
+            if (petal.id == R.id.ENE) {
+                petal.power = windPowerPercent.ENE / 100f
+            }
+            if (petal.id == R.id.E) {
+                petal.power = windPowerPercent.E / 100f
+            }
+            if (petal.id == R.id.ESE) {
+                petal.power = windPowerPercent.ESE / 100f
+            }
+            if (petal.id == R.id.SE) {
+                petal.power = windPowerPercent.SE / 100f
+            }
+            if (petal.id == R.id.SSE) {
+                petal.power = windPowerPercent.SSE / 100f
+            }
+            if (petal.id == R.id.S) {
+                petal.power = windPowerPercent.S / 100f
+            }
+            if (petal.id == R.id.SSW) {
+                petal.power = windPowerPercent.SSW / 100f
+            }
+            if (petal.id == R.id.SW) {
+                petal.power = windPowerPercent.SW / 100f
+            }
+            if (petal.id == R.id.WSW) {
+                petal.power = windPowerPercent.WSW / 100f
+            }
+            if (petal.id == R.id.W) {
+                petal.power = windPowerPercent.W / 100f
+            }
+            if (petal.id == R.id.WNW) {
+                petal.power = windPowerPercent.WNW / 100f
+            }
+            if (petal.id == R.id.NW) {
+                petal.power = windPowerPercent.NW / 100f
+            }
+            if (petal.id == R.id.NNW) {
+                petal.power = windPowerPercent.NNW / 100f
+            }
+        }
+    }
+
     private fun draw() {
         setChildStyle()
+        setWindPower()
         invalidate()
         requestLayout()
     }
@@ -186,4 +250,49 @@ class WindDirections(context: Context, attrs: AttributeSet) : FrameLayout(contex
         Sixteen
     }
 
+    data class WindPower (
+        var N: Int = 0,
+        var NNE: Int = 0,
+        var NE: Int = 0,
+        var ENE: Int = 0,
+        var E: Int = 0,
+        var ESE: Int = 0,
+        var SE: Int = 0,
+        var SSE: Int = 0,
+        var S: Int = 0,
+        var SSW: Int = 0,
+        var SW: Int = 0,
+        var WSW: Int = 0,
+        var W: Int = 0,
+        var WNW: Int = 0,
+        var NW: Int = 0,
+        var NNW: Int = 0
+    ) {
+        fun toPercent(): WindPower {
+            val max = getMaxPower()
+
+            return WindPower(
+                N * 100 /  max,
+                NNE * 100 /  max,
+                NE * 100 /  max,
+                ENE * 100 /  max,
+                E * 100 /  max,
+                ESE * 100 /  max,
+                SE * 100 /  max,
+                SSE * 100 /  max,
+                S * 100 /  max,
+                SSW * 100 /  max,
+                SW * 100 /  max,
+                WSW * 100 /  max,
+                W * 100 /  max,
+                WNW * 100 /  max,
+                NW * 100 /  max,
+                NNW * 100 /  max
+            )
+        }
+
+        private fun getMaxPower(): Int {
+            return arrayOf(N, NNE, NE, ENE, E, ESE, SE, SSE, S, SSW, SW, WSW, W, WNW, NW, NNW).max()?: 0
+        }
+    }
 }

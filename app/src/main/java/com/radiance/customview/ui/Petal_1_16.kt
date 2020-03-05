@@ -7,18 +7,30 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
+import com.bsvt.winddirections.WindDirections
 import com.radiance.customview.R
 import com.bsvt.winddirections.petal.Petal
 import com.radiance.customview.windDirections.petal.toBottomStyle
 import com.radiance.customview.windDirections.petal.toTopStyle
 import kotlinx.android.synthetic.main.fragment_petal_1_16.*
+import kotlinx.android.synthetic.main.fragment_petal_1_16.borderSeek
+import kotlinx.android.synthetic.main.fragment_petal_1_16.borderTitle
+import kotlinx.android.synthetic.main.fragment_petal_1_16.bottomRadiusSeek
+import kotlinx.android.synthetic.main.fragment_petal_1_16.bottomRadiusTitle
+import kotlinx.android.synthetic.main.fragment_petal_1_16.bottomStyleSeek
+import kotlinx.android.synthetic.main.fragment_petal_1_16.bottomStyleTitle
+import kotlinx.android.synthetic.main.fragment_petal_1_16.marginSeek
+import kotlinx.android.synthetic.main.fragment_petal_1_16.marginTitle
+import kotlinx.android.synthetic.main.fragment_petal_1_16.topStyleSeek
+import kotlinx.android.synthetic.main.fragment_petal_1_16.topStyleTitle
+import kotlinx.android.synthetic.main.fragment_petal_1_8.*
 
 class Petal_1_16 : Fragment() {
-    private var topStyle = Petal.TopStyle.Flat
-    private var bottomStyle = Petal.BottomStyle.Flat
+    private var topStyle = Petal.TopStyle.Sector
+    private var bottomStyle = Petal.BottomStyle.Sector
     private var bottomRadius = 0
-    private var margin = 0
-    private var border = 0
+    private var margin = 1
+    private var border = 1
 
     private var petals = ArrayList<Petal>()
 
@@ -31,24 +43,6 @@ class Petal_1_16 : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        petals.clear()
-//        petals.add(N)
-//        petals.add(NNE)
-//        petals.add(NE)
-//        petals.add(ENE)
-//        petals.add(E)
-//        petals.add(ESE)
-//        petals.add(SE)
-//        petals.add(SSE)
-//        petals.add(S)
-//        petals.add(SSW)
-//        petals.add(SW)
-//        petals.add(WSW)
-//        petals.add(W)
-//        petals.add(WNW)
-//        petals.add(NW)
-//        petals.add(NNW)
     }
 
     @SuppressLint("SetTextI18n")
@@ -129,6 +123,29 @@ class Petal_1_16 : Fragment() {
             }
 
         })
+
+        setStyle()
+
+        val windPower = WindDirections.WindPower().apply {
+            N = 500
+            NNE = 400
+            NE = 500
+            ENE = 440
+            E = 550
+            ESE = 300
+            SE = 350
+            SSE = 400
+            S = 0
+            SSW = 0
+            SW = 0
+            WSW = 0
+            W = 0
+            WNW = 0
+            NW = 0
+            NNW = 0
+        }
+
+        sixteen.windPower = windPower
     }
 
     @SuppressLint("SetTextI18n")

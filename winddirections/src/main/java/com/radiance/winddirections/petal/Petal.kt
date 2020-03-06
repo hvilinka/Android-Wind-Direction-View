@@ -1,9 +1,14 @@
 package com.radiance.winddirections.petal
 
+import android.animation.AnimatorSet
+import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
+import android.view.animation.AccelerateInterpolator
+import android.view.animation.AnimationSet
+import android.view.animation.LinearInterpolator
 import androidx.annotation.FloatRange
 import com.radiance.winddirections.R
 import com.radiance.customview.windDirections.petal.*
@@ -61,7 +66,7 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
     @FloatRange(from = 0.0, to = 1.0)
     var power = defaultPower
         set(value) {
-            field = value * 0.9f
+            field = value
             updateView()
         }
 
@@ -358,10 +363,10 @@ class Petal(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
         fun toDegrees(): Float {
             return when (this) {
-                N -> -90f
-                NNE -> -67.5f
-                NE -> -45f
-                ENE -> -22.5f
+                N -> 270f
+                NNE -> 292.5f
+                NE -> 315f
+                ENE -> 337.5f
                 E -> 0f
                 ESE -> 22.5f
                 SE -> 45f

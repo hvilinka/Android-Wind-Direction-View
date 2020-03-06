@@ -11,8 +11,77 @@ import com.radiance.customview.windDirections.petal.toBottomStyle
 import com.radiance.customview.windDirections.petal.toTopStyle
 import com.radiance.customview.windDirections.petal.toWindAngle
 
+/**
+ * View responsible for displaying WindDirections
+ *
+ * To display a WindDirections in an activity, add a petal to the activity's layout XML file:
+ *
+ *      <com.radiance.winddirections.WindDirections
+ *          android:id="@+id/wd_id"
+ *          android:layout_height="wrap_content"
+ *          android:layout_width="wrap_content"/>
+ *
+ * To set wind power:
+ *  Programmatically:
+ *      1. Create WindPower object. WindPower contains wind power depending on the direction.
+ *         For all direction see [com.radiance.winddirections.WindDirections.WindPower]
+ *
+ *      val windPower = WindDirections.WindPower().apply {N = 400
+ *                                                        S = 300
+ *                                                        E = 200
+ *                                                        W = 500}
+ *
+ *      2. Find windDirection view
+ *
+ *      val windDirections = findViewById<WindDirections>(R.id.wd_id)
+ *
+ *      3. Set windPower property
+ *      windDirections.windPower = windPower
+ *
+ *  By XML:
+ *      1. Please use programmatically gide
+ *
+ * All available XML style attributes:
+ *
+ *  WindDirections:
+ *      directionsCount     - type: Enum, value: eight, sixteen (count of petal)
+ *  Grid:
+ *      grid_text_size      - type: Dimension (directions title text size)
+ *      grid_text_color     - type: Color (direction title text color)
+ *      grid_line_size      - type: Dimension (grid size)
+ *      grid_line_color     - type: Color (grid color)
+ *  Petal:
+ *      petal_color         - type: Color (petal color)
+ *      petal_border_color  - type: Color (petal border color)
+ *      petal_border_size   - type: Dimension (petal border size)
+ *      petal_margin        - type: Dimension (petal margin)
+ *      petal_top_style     - type: Enum, value: flat, sector (petal top style, flat - flat top,
+ *                            sector - top is path of circle)
+ *      petal_bottom_size   - type: Enum, value: flat, sector (petal bottom style,
+ *                            flat - flat bottom, sector - bottom is path of circle)
+ *      petal_bottom_radius - type: Dimension (radius of fillet of the petal bottom)
+ *
+ * @param context The Context the WindDirections is running in, through which it can
+ *        access the current theme, resources, etc.
+ * @param attrs The attributes of the XML WindDirections tag being used to inflate the view.
+ *
+ * @property angle corresponds to directionsCount attribute.
+ * @property windPower is used for display wind power
+ * @property petalColor corresponds to petal_color attribute.
+ * @property petalBorderColor corresponds to petal_border_color attribute.
+ * @property petalBorder corresponds to petal_border_size attribute.
+ * @property petalMargin corresponds to petal_margin attribute.
+ * @property topStyle corresponds to petal_top_style attribute.
+ * @property bottomStyle corresponds to petal_bottom_size attribute.
+ * @property bottomRadius corresponds to petal_bottom_radius attribute.
+ * @property gridTextColor corresponds to grid_text_color attribute.
+ * @property gridTextSize corresponds to grid_text_size attribute.
+ * @property gridLineColor corresponds to grid_line_color attribute.
+ * @property gridLineSize corresponds to grid_line_size attribute.
+ */
 class WindDirections(context: Context, attrs: AttributeSet) : FrameLayout(context, attrs) {
 
+    //region attributes
     var angle: Angle = defaultAngle
         set(value) {
             field = value
@@ -90,9 +159,11 @@ class WindDirections(context: Context, attrs: AttributeSet) : FrameLayout(contex
             field = value
             draw()
         }
+    //endregion
 
     private val petalList = ArrayList<Petal>()
     private var grid: WindDirectionGrid? = null
+    private val petalRadiusCorrection = 0.9f
 
     init {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -106,35 +177,10 @@ class WindDirections(context: Context, attrs: AttributeSet) : FrameLayout(contex
 
         getChildList()
         setChildStyle()
-        setWindPower()
+        setWindPower(petalRadiusCorrection)
     }
 
-    private fun setAttributes(context: Context, attrs: AttributeSet) {
-        val typedArray = context.theme.obtainStyledAttributes(
-            attrs,
-            R.styleable.WindDirections, 0, 0
-        )
-        petalColor = typedArray.getColor(R.styleable.WindDirections_petal_color, defaultColor)
-        petalBorderColor =
-            typedArray.getColor(R.styleable.WindDirections_petal_border_color, defaultPetalBorderColor)
-        petalBorder = typedArray.getDimensionPixelSize(
-            R.styleable.WindDirections_petal_border_size,
-            defaultPetalBorder.toInt()
-        ).toFloat()
-        petalMargin = typedArray.getDimensionPixelSize(
-            R.styleable.WindDirections_petal_margin,
-            defaultPetalMargin.toInt()
-        ).toFloat()
-        angle = typedArray.getInteger(R.styleable.WindDirections_directionsCount, defaultAngleEnum).toWindAngle()
-        topStyle = typedArray.getInteger(R.styleable.WindDirections_petal_top_style, defaultTopStyleEnum)
-            .toTopStyle()
-        bottomStyle =
-            typedArray.getInteger(R.styleable.WindDirections_petal_bottom_size, defaultBottomStyleEnum)
-                .toBottomStyle()
-        bottomRadius = typedArray.getDimensionPixelSize(
-            R.styleable.WindDirections_petal_bottom_radius,
-            defaultBottomRadius.toInt()
-        ).toFloat()
+    fun startAnimation() {
     }
 
     private fun getChildList() {
@@ -164,62 +210,98 @@ class WindDirections(context: Context, attrs: AttributeSet) : FrameLayout(contex
         grid?.gridSize = gridLineSize
     }
 
-    private fun setWindPower() {
+    private fun setWindPower(correction: Float) {
         for (petal in petalList) {
             if (petal.id == R.id.N) {
-                petal.power = windPowerPercent.N / 100f
+                petal.power = windPowerPercent.N / 100f * correction
             }
             if (petal.id == R.id.NNE) {
-                petal.power = windPowerPercent.NNE / 100f
+                petal.power = windPowerPercent.NNE / 100f * correction
             }
             if (petal.id == R.id.NE) {
-                petal.power = windPowerPercent.NE / 100f
+                petal.power = windPowerPercent.NE / 100f * correction
             }
             if (petal.id == R.id.ENE) {
-                petal.power = windPowerPercent.ENE / 100f
+                petal.power = windPowerPercent.ENE / 100f * correction
             }
             if (petal.id == R.id.E) {
-                petal.power = windPowerPercent.E / 100f
+                petal.power = windPowerPercent.E / 100f * correction
             }
             if (petal.id == R.id.ESE) {
-                petal.power = windPowerPercent.ESE / 100f
+                petal.power = windPowerPercent.ESE / 100f * correction
             }
             if (petal.id == R.id.SE) {
-                petal.power = windPowerPercent.SE / 100f
+                petal.power = windPowerPercent.SE / 100f * correction
             }
             if (petal.id == R.id.SSE) {
-                petal.power = windPowerPercent.SSE / 100f
+                petal.power = windPowerPercent.SSE / 100f * correction
             }
             if (petal.id == R.id.S) {
-                petal.power = windPowerPercent.S / 100f
+                petal.power = windPowerPercent.S / 100f * correction
             }
             if (petal.id == R.id.SSW) {
-                petal.power = windPowerPercent.SSW / 100f
+                petal.power = windPowerPercent.SSW / 100f * correction
             }
             if (petal.id == R.id.SW) {
-                petal.power = windPowerPercent.SW / 100f
+                petal.power = windPowerPercent.SW / 100f * correction
             }
             if (petal.id == R.id.WSW) {
-                petal.power = windPowerPercent.WSW / 100f
+                petal.power = windPowerPercent.WSW / 100f * correction
             }
             if (petal.id == R.id.W) {
-                petal.power = windPowerPercent.W / 100f
+                petal.power = windPowerPercent.W / 100f * correction
             }
             if (petal.id == R.id.WNW) {
-                petal.power = windPowerPercent.WNW / 100f
+                petal.power = windPowerPercent.WNW / 100f * correction
             }
             if (petal.id == R.id.NW) {
-                petal.power = windPowerPercent.NW / 100f
+                petal.power = windPowerPercent.NW / 100f * correction
             }
             if (petal.id == R.id.NNW) {
-                petal.power = windPowerPercent.NNW / 100f
+                petal.power = windPowerPercent.NNW / 100f * correction
             }
         }
     }
 
+    private fun setAttributes(context: Context, attrs: AttributeSet) {
+        val typedArray = context.theme.obtainStyledAttributes(
+            attrs,
+            R.styleable.WindDirections, 0, 0
+        )
+        petalColor = typedArray.getColor(R.styleable.WindDirections_petal_color, defaultColor)
+        petalBorderColor =
+            typedArray.getColor(
+                R.styleable.WindDirections_petal_border_color,
+                defaultPetalBorderColor
+            )
+        petalBorder = typedArray.getDimensionPixelSize(
+            R.styleable.WindDirections_petal_border_size,
+            defaultPetalBorder.toInt()
+        ).toFloat()
+        petalMargin = typedArray.getDimensionPixelSize(
+            R.styleable.WindDirections_petal_margin,
+            defaultPetalMargin.toInt()
+        ).toFloat()
+        angle = typedArray.getInteger(R.styleable.WindDirections_directionsCount, defaultAngleEnum)
+            .toWindAngle()
+        topStyle =
+            typedArray.getInteger(R.styleable.WindDirections_petal_top_style, defaultTopStyleEnum)
+                .toTopStyle()
+        bottomStyle =
+            typedArray.getInteger(
+                R.styleable.WindDirections_petal_bottom_size,
+                defaultBottomStyleEnum
+            )
+                .toBottomStyle()
+        bottomRadius = typedArray.getDimensionPixelSize(
+            R.styleable.WindDirections_petal_bottom_radius,
+            defaultBottomRadius.toInt()
+        ).toFloat()
+    }
+
     private fun draw() {
         setChildStyle()
-        setWindPower()
+        setWindPower(petalRadiusCorrection)
         invalidate()
         requestLayout()
     }
@@ -250,7 +332,7 @@ class WindDirections(context: Context, attrs: AttributeSet) : FrameLayout(contex
         Sixteen
     }
 
-    data class WindPower (
+    data class WindPower(
         var N: Int = 0,
         var NNE: Int = 15,
         var NE: Int = 30,
@@ -272,27 +354,28 @@ class WindDirections(context: Context, attrs: AttributeSet) : FrameLayout(contex
             val max = getMaxPower()
 
             return WindPower(
-                N * 100 /  max,
-                NNE * 100 /  max,
-                NE * 100 /  max,
-                ENE * 100 /  max,
-                E * 100 /  max,
-                ESE * 100 /  max,
-                SE * 100 /  max,
-                SSE * 100 /  max,
-                S * 100 /  max,
-                SSW * 100 /  max,
-                SW * 100 /  max,
-                WSW * 100 /  max,
-                W * 100 /  max,
-                WNW * 100 /  max,
-                NW * 100 /  max,
-                NNW * 100 /  max
+                N * 100 / max,
+                NNE * 100 / max,
+                NE * 100 / max,
+                ENE * 100 / max,
+                E * 100 / max,
+                ESE * 100 / max,
+                SE * 100 / max,
+                SSE * 100 / max,
+                S * 100 / max,
+                SSW * 100 / max,
+                SW * 100 / max,
+                WSW * 100 / max,
+                W * 100 / max,
+                WNW * 100 / max,
+                NW * 100 / max,
+                NNW * 100 / max
             )
         }
 
         private fun getMaxPower(): Int {
-            return arrayOf(N, NNE, NE, ENE, E, ESE, SE, SSE, S, SSW, SW, WSW, W, WNW, NW, NNW).max()?: 0
+            return arrayOf(N, NNE, NE, ENE, E, ESE, SE, SSE, S, SSW, SW, WSW, W, WNW, NW, NNW).max()
+                ?: 0
         }
     }
 }

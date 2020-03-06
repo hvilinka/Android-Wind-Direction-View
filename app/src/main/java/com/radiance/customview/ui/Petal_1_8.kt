@@ -115,17 +115,21 @@ class Petal_1_8 : Fragment() {
         setStyle()
 
         val windPower = WindDirections.WindPower().apply {
-            N = 400
-            NE = 500
-            E = 234
-            SE = 100
-            S = 50
-            SW = 0
-            W = 0
-            NW = 30
+            N = 7234
+            NE = 6214
+            E = 762
+            SE = 3456
+            S = 3462
+            SW = 7756
+            W = 2222
+            NW = 222
         }
 
         eight.windPower = windPower
+
+        eight.setOnClickListener {
+            eight.startAnimation()
+        }
     }
 
     @SuppressLint("SetTextI18n")

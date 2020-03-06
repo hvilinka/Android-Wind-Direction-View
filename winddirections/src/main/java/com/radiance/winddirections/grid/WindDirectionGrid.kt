@@ -10,7 +10,30 @@ import android.view.View
 import com.radiance.winddirections.R
 
 /**
+ * View responsible for displaying grid in a wind directions([com.radiance.winddirections.WindDirections])
  *
+ * To display grid in a activity, add a grid to the activity's layout XML file:
+ *
+ *      <com.radiance.winddirections.grid.WindDirectionGrid
+ *          android:id="@+id/grid_id"
+ *          android:layout_height="wrap_content"
+ *          android:layout_width="wrap_content />
+ *
+ * All XML style attributes available on Grid:
+ *
+ *      textSize        - type: Dimension (directions title text size)
+ *      textColor       - type: Color (direction title text color)
+ *      gridSize        - type: Dimension (grid size)
+ *      gridColor       - type: Color (grid color)
+ *
+ * @param context The Context the Grid is running in, through which it can
+ *        access the current theme, resources, etc.
+ * @param attrs The attributes of the XML Grid tag being used to inflate the view.
+ *
+ * @property textSize corresponds to textSize attribute.
+ * @property textColor corresponds to textColor attribute.
+ * @property gridSize corresponds to gridSize attribute.
+ * @property gridColor corresponds to gridColor attribute.
  */
 class WindDirectionGrid(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private val mainPaint = Paint(Paint.ANTI_ALIAS_FLAG)

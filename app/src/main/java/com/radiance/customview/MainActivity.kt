@@ -7,8 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.radiance.customview.ui.Petal_1_16
-import com.radiance.customview.ui.Petal_1_8
+import com.radiance.customview.ui.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -38,6 +37,27 @@ class MainActivity : AppCompatActivity() {
                 supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.fragment_place, Petal_1_8(), null)
+                    .commit()
+                false
+            }
+            R.id.grid_features -> {
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragment_place, GridFeatures(), null)
+                    .commit()
+                false
+            }
+            R.id.petal_features -> {
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragment_place, PetalFeatures(), null)
+                    .commit()
+                false
+            }
+            R.id.margin -> {
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragment_place, MarginBorderFeature(), null)
                     .commit()
                 false
             }

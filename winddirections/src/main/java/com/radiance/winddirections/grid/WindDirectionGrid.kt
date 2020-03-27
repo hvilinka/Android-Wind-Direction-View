@@ -48,6 +48,9 @@ class WindDirectionGrid(context: Context, attrs: AttributeSet) : View(context, a
             field = value
             updateView()
         }
+
+    private var textLineSize = defaultGridSize
+
     var gridColor = defaultGridColor
         set(value) {
             field = value
@@ -102,6 +105,7 @@ class WindDirectionGrid(context: Context, attrs: AttributeSet) : View(context, a
     private fun drawText(canvas: Canvas?) {
         mainPaint.style = Paint.Style.FILL_AND_STROKE
         mainPaint.textSize = textSize
+        mainPaint.strokeWidth = textLineSize
         mainPaint.color = textColor
 
         val radius = (if (width <= height) width.toFloat() else height.toFloat()) / 2

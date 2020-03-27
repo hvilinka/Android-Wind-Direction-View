@@ -25,7 +25,7 @@ To display a WindDirections in an activity, add a petal to the activity's layout
       app:petal_border_size="2dp"   
       app:petal_margin="2dp"        
       app:petal_top_style="sector"     
-      app:petal_bottom_size="sector"     
+      app:petal_bottom_style="sector"     
       app:petal_bottom_radius="4dp" />
 ```
 
@@ -75,4 +75,16 @@ windDirections.windPower = windPower
  | border size | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/petal_border_size.gif) | app:petal_border_size="2dp" | wdView.petalBorder = 3.0 |
   | border color | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/petal_border_color.gif) | app:petal_border_color="#000000" | wdView.petalBorderColor = color |
   
-### Style
+### Top Style
+
+ | Value         | Sample        | XML property  | Kotlin property |
+ | :-----------: |:-------------:|:-------------:|:---------------:|
+ | sector | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/pot_style_sector.jpg) | app:petal_top_style="sector" | wdView.topStyle = Petal.TopStyle.Sector |
+ | flat | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/top_style_flat.jpg) | app:petal_top_style="flat" | wdView.topStyle = Petal.TopStyle.Flat |
+ 
+ ### Bottom Style
+
+ | Value         | Sample        | XML property  | Kotlin property |
+ | :-----------: |:-------------:|:-------------:|:---------------:|
+ | sector | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/bottom_style_sector.jpg) | app:petal_bottom_style="sector" | wdView.bottomStyle = Petal.BottomStyle.Sector |
+ | flat | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/bottom_style_flat.jpg) | app:petal_bottom_style="flat" | wdView.bottomStyle = Petal.BottomStyle.Flat |

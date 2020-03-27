@@ -1,6 +1,24 @@
 ![header](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/Wind-Direction-View.png)
 
+
+* [Overview](#overview)
+* [Setup](#setup)
+* [Features](#features)
+  * [Directions](#directions)
+  * [Grid](#grid)
+    * [Text](#text)
+    * [Lines](#lines)
+  * [Petal](#petal)
+    * [Top Style](#top_style)
+    * [Bottom Style](#bottom_style)
+  * [Margin](#margin)
+  * [Bottom Radius](#bottom_radius)
+
+<a name="overview"/>
+
 # Overview
+
+<a name="setup"/>
 
 # Setup
 
@@ -43,7 +61,12 @@ val windDirections = findViewById<WindDirections>(R.id.wd_id)
 windDirections.windPower = windPower
 ```
 
+<a name="features"/>
+
 # Features
+
+<a name="directions"/>
+
 ## Directions
 
 | Value         | Sample        | XML property | Kotlin property |
@@ -51,7 +74,12 @@ windDirections.windPower = windPower
 | eight         | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/eight.jpg) | app:directionsCount="eight" | wdView.angle = WindDirections.Angle.Eight |
 | sixteen       | ![sixteen](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/sixteen.jpg) | app:directionsCount="sixteen" | wdView.angle = WindDirections.AngleSixteen |
 
+<a name="grid"/>
+
 ## Grid
+
+<a name="text"/>
+
 ### Text
 
  | Value         | Sample        | XML property  | Kotlin property |
@@ -59,13 +87,17 @@ windDirections.windPower = windPower
  |size     | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/text_size.gif) | app:grid_text_size="18dp" | wdView.gridTextSize = 10.0 |
  | color    | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/text_color.gif) | app:grid_text_color="#000000" | wdView.gridTextColor = color |
 
+
+<a name="lines"/>
+
 ### Lines
 
-      
  | Value         | Sample        | XML property  | Kotlin property |
  | ------------- |:-------------:|:-------------:|:---------------:|
  |size     | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/grid_size.gif) | app:grid_line_size="1dp" | wdView.gridLineSize = 3.0 |
  | color    | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/grid_color.gif) | app:grid_line_color="#000000" | wdView.gridLineColor = color |
+
+<a name="petal"/>
 
 ## Petal
 
@@ -75,12 +107,16 @@ windDirections.windPower = windPower
  | border size | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/petal_border_size.gif) | app:petal_border_size="2dp" | wdView.petalBorder = 3.0 |
   | border color | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/petal_border_color.gif) | app:petal_border_color="#000000" | wdView.petalBorderColor = color |
   
+<a name="top_style"/>  
+  
 ### Top Style
 
  | Value         | Sample        | XML property  | Kotlin property |
  | :-----------: |:-------------:|:-------------:|:---------------:|
  | sector | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/pot_style_sector.jpg) | app:petal_top_style="sector" | wdView.topStyle = Petal.TopStyle.Sector |
  | flat | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/top_style_flat.jpg) | app:petal_top_style="flat" | wdView.topStyle = Petal.TopStyle.Flat |
+ 
+ <a name="bottom_style"/> 
  
  ### Bottom Style
 
@@ -89,10 +125,15 @@ windDirections.windPower = windPower
  | sector | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/bottom_style_sector.jpg) | app:petal_bottom_style="sector" | wdView.bottomStyle = Petal.BottomStyle.Sector |
  | flat | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/bottom_style_flat.jpg) | app:petal_bottom_style="flat" | wdView.bottomStyle = Petal.BottomStyle.Flat |
  
+ <a name="margin"/> 
+ 
  ## Margin
+ 
  | Value         | Sample        | XML property  | Kotlin property |
  | :-----------: |:-------------:|:-------------:|:---------------:|
  | margin | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/margin.gif) | app:petal_margin="2dp" | wdView.petalMargin = 4.0 |
+ 
+ <a name="bottom_radius"/> 
  
  ## Bottom Radius
  

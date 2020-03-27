@@ -51,4 +51,19 @@ windDirections.windPower = windPower
 | eight         | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/eight.jpg) | app:directionsCount="eight" | wdView.angle = WindDirections.Angle.Eight |
 | sixteen       | ![sixteen](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/sixteen.jpg) | app:directionsCount="sixteen" | wdView.angle = WindDirections.AngleSixteen |
 
-## Grid text size
+## Grid
+### Text
+
+ | Value         | Sample        | XML property  | Kotlin property |
+ | ------------- |:-------------:|:-------------:|:---------------:|
+ |size     | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/text_size.gif) | app:grid_text_size="18dp" | wdView.gridTextSize = 10.0 |
+ | color    | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/text_color.gif) | app:grid_text_color="#000000" | sixteen.gridTextColor = color |
+
+### Lines
+
+      
+ | Value         | Sample        | XML property  | Kotlin property |
+ | ------------- |:-------------:|:-------------:|:---------------:|
+ |size     | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/grid_size.gif) | app:grid_line_size="1dp" | wdView.gridLineSize = 3.0 |
+ | color    | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/grid_color.gif) | app:grid_line_color="#000000" | sixteen.gridLineColor = color |
+

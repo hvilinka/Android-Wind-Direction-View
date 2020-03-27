@@ -88,3 +88,14 @@ windDirections.windPower = windPower
  | :-----------: |:-------------:|:-------------:|:---------------:|
  | sector | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/bottom_style_sector.jpg) | app:petal_bottom_style="sector" | wdView.bottomStyle = Petal.BottomStyle.Sector |
  | flat | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/bottom_style_flat.jpg) | app:petal_bottom_style="flat" | wdView.bottomStyle = Petal.BottomStyle.Flat |
+ 
+ ## Margin
+ | Value         | Sample        | XML property  | Kotlin property |
+ | :-----------: |:-------------:|:-------------:|:---------------:|
+ | margin | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/margin.gif) | app:petal_margin="2dp" | wdView.petalMargin = 4.0 |
+ 
+ ## Bottom Radius
+ 
+  | Value         | Sample        | XML property  | Kotlin property |
+ | :-----------: |:-------------:|:-------------:|:---------------:|
+ | radius | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/bottom.gif) | app:petal_bottom_radius="4dp" | wdView.bottomRadius = 4.0 |

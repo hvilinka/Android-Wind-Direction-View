@@ -57,7 +57,7 @@ windDirections.windPower = windPower
  | Value         | Sample        | XML property  | Kotlin property |
  | ------------- |:-------------:|:-------------:|:---------------:|
  |size     | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/text_size.gif) | app:grid_text_size="18dp" | wdView.gridTextSize = 10.0 |
- | color    | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/text_color.gif) | app:grid_text_color="#000000" | sixteen.gridTextColor = color |
+ | color    | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/text_color.gif) | app:grid_text_color="#000000" | wdView.gridTextColor = color |
 
 ### Lines
 
@@ -65,5 +65,14 @@ windDirections.windPower = windPower
  | Value         | Sample        | XML property  | Kotlin property |
  | ------------- |:-------------:|:-------------:|:---------------:|
  |size     | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/grid_size.gif) | app:grid_line_size="1dp" | wdView.gridLineSize = 3.0 |
- | color    | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/grid_color.gif) | app:grid_line_color="#000000" | sixteen.gridLineColor = color |
+ | color    | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/grid_color.gif) | app:grid_line_color="#000000" | wdView.gridLineColor = color |
 
+## Petal
+
+ | Value         | Sample        | XML property  | Kotlin property |
+ | :-----------: |:-------------:|:-------------:|:---------------:|
+ | color | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/petal_color.gif) | app:petal_color="@color/colorAccent" | wdView.petalColor = color |
+ | border size | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/petal_border_size.gif) | app:petal_border_size="2dp" | wdView.petalBorder = 3.0 |
+  | border color | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/petal_border_color.gif) | app:petal_border_color="#000000" | wdView.petalBorderColor = color |
+  
+### Style

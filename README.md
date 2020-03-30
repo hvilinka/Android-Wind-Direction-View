@@ -22,6 +22,15 @@
 
 # Setup
 
+build.gradle 
+
+```grovy
+dependencies {
+    ...
+    implementation 'com.radiance.winddirections:winddirections:1.0.0'
+}
+```
+
 To display a WindDirections in an activity, add a petal to the activity's layout XML file:
 
 ```xml

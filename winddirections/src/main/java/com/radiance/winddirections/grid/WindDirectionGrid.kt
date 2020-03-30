@@ -8,6 +8,7 @@ import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
 import com.radiance.winddirections.R
+import kotlin.math.round
 
 /**
  * View responsible for displaying grid in a wind directions([com.radiance.winddirections.WindDirections])
@@ -77,8 +78,8 @@ class WindDirectionGrid(context: Context, attrs: AttributeSet) : View(context, a
 
         val path = Path()
 
-        val lineSize = (if (width <= height) width.toFloat() else height.toFloat()) / 2 * 0.9f
         val radius = (if (width <= height) width.toFloat() else height.toFloat()) / 2
+        val lineSize = radius* 0.9f
 
         val centerX = width / 2f
         val centerY = height / 2f
@@ -87,14 +88,10 @@ class WindDirectionGrid(context: Context, attrs: AttributeSet) : View(context, a
         path.addCircle(centerX, centerY, radius * 0.6f, Path.Direction.CW)
         path.addCircle(centerX, centerY, radius * 0.3f, Path.Direction.CW)
 
-        path.moveTo(centerX, centerY)
-        path.rLineTo(0F, lineSize)
-        path.moveTo(centerX, centerY)
-        path.rLineTo(0F, -lineSize)
-        path.moveTo(centerX, centerY)
-        path.rLineTo(lineSize, 0F)
-        path.moveTo(centerX, centerY)
-        path.rLineTo(-lineSize, 0F)
+        path.moveTo(centerX - lineSize, centerY)
+        path.rLineTo(2 * lineSize, 0F)
+        path.moveTo(centerX, centerY - lineSize)
+        path.rLineTo(0F, 2 * lineSize)
 
         canvas?.drawPath(path, mainPaint)
     }
@@ -152,10 +149,10 @@ class WindDirectionGrid(context: Context, attrs: AttributeSet) : View(context, a
     }
 
     companion object {
-        var defaultTextSize     = 40f
-        var defaultGridSize     = 1f
-        var defaultGridColor    = Color.BLACK
-        var defaultTextColor    = Color.BLACK
+        var defaultTextSize = 40F
+        var defaultGridSize = 1F
+        var defaultGridColor = Color.BLACK
+        var defaultTextColor = Color.BLACK
     }
 
 }

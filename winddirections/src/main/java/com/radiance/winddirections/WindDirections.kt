@@ -139,6 +139,11 @@ class WindDirections(context: Context, attrs: AttributeSet) : FrameLayout(contex
             draw()
         }
 
+    var gridCirclesNumber: Int = defaultCirclesNumber
+        set(value) {
+            field = value
+            draw()
+        }
     var gridTextSize = defaultTextSize
         set(value) {
             field = value
@@ -204,6 +209,7 @@ class WindDirections(context: Context, attrs: AttributeSet) : FrameLayout(contex
             petal.topStyle = topStyle
             petal.bottomRadius = bottomRadius
         }
+        grid?.circlesNumber = gridCirclesNumber
         grid?.textSize = gridTextSize
         grid?.textColor = gridTextColor
         grid?.gridColor = gridLineColor
@@ -287,6 +293,8 @@ class WindDirections(context: Context, attrs: AttributeSet) : FrameLayout(contex
         topStyle =
             typedArray.getInteger(R.styleable.WindDirections_petal_top_style, defaultTopStyleEnum)
                 .toTopStyle()
+        gridCirclesNumber = typedArray.getInteger(R.styleable.WindDirections_grid_circles_number,
+            defaultCirclesNumber)
         bottomStyle =
             typedArray.getInteger(
                 R.styleable.WindDirections_petal_bottom_style,
@@ -339,6 +347,7 @@ class WindDirections(context: Context, attrs: AttributeSet) : FrameLayout(contex
         private const val defaultBottomStyleEnum = 1
         private const val defaultBottomRadius = 0f
         //grid
+        private const val defaultCirclesNumber = 3
         private const val defaultTextSize = 40f
         private const val defaultGridSize = 1f
         private const val defaultGridColor = Color.BLACK

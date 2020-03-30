@@ -15,9 +15,9 @@
             <enum name="flat" value="0" />
             <enum name="sector" value="1" />
         </attr>
-        <attr name="petal_bottom_size" format="enum">
-            <enum name="flat" value="0" />
-            <enum name="sector" value="1" />
+        <attr name="petal_bottom_style" format="enum">
+            <enum name="flat" value="0"/>
+            <enum name="sector" value="1"/>
         </attr>
         <attr name="petal_bottom_radius" format="dimension" />
         <!--grid attrs-->

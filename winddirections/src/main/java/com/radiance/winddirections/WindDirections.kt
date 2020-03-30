@@ -57,7 +57,7 @@ import com.radiance.customview.windDirections.petal.toWindAngle
  *      petal_margin        - type: Dimension (petal margin)
  *      petal_top_style     - type: Enum, value: flat, sector (petal top style, flat - flat top,
  *                            sector - top is path of circle)
- *      petal_bottom_size   - type: Enum, value: flat, sector (petal bottom style,
+ *      petal_bottom_style  - type: Enum, value: flat, sector (petal bottom style,
  *                            flat - flat bottom, sector - bottom is path of circle)
  *      petal_bottom_radius - type: Dimension (radius of fillet of the petal bottom)
  *
@@ -297,13 +297,31 @@ class WindDirections(context: Context, attrs: AttributeSet) : FrameLayout(contex
             defaultCirclesNumber)
         bottomStyle =
             typedArray.getInteger(
-                R.styleable.WindDirections_petal_bottom_size,
+                R.styleable.WindDirections_petal_bottom_style,
                 defaultBottomStyleEnum
             )
                 .toBottomStyle()
         bottomRadius = typedArray.getDimensionPixelSize(
             R.styleable.WindDirections_petal_bottom_radius,
             defaultBottomRadius.toInt()
+        ).toFloat()
+
+        gridLineColor =
+            typedArray.getColor(R.styleable.WindDirections_grid_line_color,
+                defaultGridColor
+            )
+        gridTextColor = typedArray.getColor(
+            R.styleable.WindDirections_grid_text_color,
+            defaultTextColor
+        )
+        gridTextSize = typedArray.getDimensionPixelSize(
+            R.styleable.WindDirections_grid_text_size,
+            defaultTextSize.toInt()
+        ).toFloat()
+
+        gridLineSize = typedArray.getDimensionPixelSize(
+            R.styleable.WindDirections_grid_line_size,
+            defaultGridSize.toInt()
         ).toFloat()
     }
 

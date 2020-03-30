@@ -7,4 +7,15 @@
     <item
         android:id="@+id/fragment_1_16"
         android:title="@string/_1_16" />
+    <item
+        android:id="@+id/grid_features"
+        android:title="grid features"/>
+
+    <item
+        android:id="@+id/petal_features"
+        android:title="petal features"/>
+
+    <item
+        android:id="@+id/margin"
+        android:title="margin"/>
 </menu>

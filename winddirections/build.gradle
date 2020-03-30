@@ -2,10 +2,33 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.bintray'
+
+ext {
+    bintrayRepo = 'Wind-Direction-View'
+    bintrayName = 'com.radiance.winddirections.winddirections'
+    libraryName = 'winddirections'
+
+
+    publishedGroupId = 'com.radiance.winddirections'
+    artifact = 'winddirections'
+    libraryVersion = '1.0.0'
+
+    libraryDescription = "Android wind direction view"
+    siteUrl = 'https://github.com/KessoPavel/Android-Wind-Direction-View'
+    gitUrl = 'https://github.com/KessoPavel/Android-Wind-Direction-View.git'
+    developerId = 'kessopavel'
+    developerName = 'KessoPavel'
+    developerEmail = 'pavel.kesso@gmail.com'
+
+    licenseName = "The Apache Software License, Version 2.0"
+    licenseUrl = "https://www.apache.org/licenses/LICENSE-2.0.txt"
+    allLicenses = ["Apache-2.0"]
+}
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    buildToolsVersion "29.0.3"
 
     defaultConfig {
         minSdkVersion 14
@@ -25,27 +48,53 @@ android {
     }
 }
 
-
-def artifactId = 'winddirections'
-def groupId = 'com.radiance.winddirections'
-
-project.afterEvaluate {
-    publishing {
-        publications {
-            library(MavenPublication) {
-                setGroupId groupId
-                setArtifactId artifactId
-                version android.defaultConfig.versionName
-
-                artifact bundleReleaseAar
-            }
-        }
-    }
-}
+//def githubProperties = new Properties()
+//githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
+//
+//def getArtifactId = 'winddirections'
+//def getGroupId = 'com.radiance.winddirections'
+//def getVersion = "1.0"
+//
+//publishing {
+//    publications {
+//        bar(MavenPublication) {
+//            groupId getGroupId
+//            artifactId getArtifactId
+//            version getVersion
+//            artifact("$buildDir/outputs/aar/${getArtifactId}-release.aar")
+//        }
+//    }
+//
+//    repositories {
+//        maven {
+//            name = "GitHubPackages"
+//            /** Configure path of your package repository on Github
+//             ** Replace GITHUB_USERID with your/organisation Github userID
+//             ** and REPOSITORY with the repository name on GitHub
+//             */
+//            url = uri("https://maven.pkg.github.com/KessoPavel/Android-Wind-Direction-View")
+//            credentials {
+//                username = githubProperties['gpr.usr'] ?: System.getenv("GPR_USER")
+//                password = githubProperties['gpr.key'] ?: System.getenv("GPR_API_KEY")
+//            }
+//        }
+//    }
+//}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.2.0'
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+if (project.rootProject.file('local.properties').exists()) {
+    //nuuneoi/JCenter/blob/master/installv1.gradle
+    apply from: "https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle"
+    apply from: "https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle"
 }

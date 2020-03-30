@@ -31,6 +31,8 @@ class Petal_1_8 : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        eight.angle = WindDirections.Angle.Sixteen
     }
 
     @SuppressLint("SetTextI18n")

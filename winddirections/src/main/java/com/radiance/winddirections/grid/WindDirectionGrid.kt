@@ -8,7 +8,6 @@ import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
 import com.radiance.winddirections.R
-import kotlin.math.round
 
 /**
  * View responsible for displaying grid in a wind directions([com.radiance.winddirections.WindDirections])
@@ -39,6 +38,11 @@ import kotlin.math.round
 class WindDirectionGrid(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private val mainPaint = Paint(Paint.ANTI_ALIAS_FLAG)
 
+    var circlesNumber: Int = defaultCirclesNumber
+        set(value) {
+            field = value
+            updateView()
+        }
     var textSize = defaultTextSize
         set(value) {
             field = value
@@ -79,14 +83,13 @@ class WindDirectionGrid(context: Context, attrs: AttributeSet) : View(context, a
         val path = Path()
 
         val radius = (if (width <= height) width.toFloat() else height.toFloat()) / 2
-        val lineSize = radius* 0.9f
+        val lineSize = radius * 0.9f
 
         val centerX = width / 2f
         val centerY = height / 2f
 
-        path.addCircle(centerX, centerY, radius * 0.9f, Path.Direction.CW)
-        path.addCircle(centerX, centerY, radius * 0.6f, Path.Direction.CW)
-        path.addCircle(centerX, centerY, radius * 0.3f, Path.Direction.CW)
+        for (i in circlesNumber downTo 0)
+            path.addCircle(centerX, centerY, lineSize * (1F / circlesNumber) * i, Path.Direction.CW)
 
         path.moveTo(centerX - lineSize, centerY)
         path.rLineTo(2 * lineSize, 0F)
@@ -146,9 +149,14 @@ class WindDirectionGrid(context: Context, attrs: AttributeSet) : View(context, a
             R.styleable.WindDirectionGrid_grid_size,
             defaultGridSize.toInt()
         ).toFloat()
+        circlesNumber = typedArray.getInteger(
+            R.styleable.WindDirectionGrid_circles_number,
+            defaultCirclesNumber
+        )
     }
 
     companion object {
+        var defaultCirclesNumber = 3
         var defaultTextSize = 40F
         var defaultGridSize = 1F
         var defaultGridColor = Color.BLACK

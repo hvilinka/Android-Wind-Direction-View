@@ -9,6 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:text_size="15sp"
+        app:circles_number="3"
         app:text_color="#FF1212"
         app:grid_size="2dp"
         app:grid_color="#62A812"

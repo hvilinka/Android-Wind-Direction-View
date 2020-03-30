@@ -12,26 +12,28 @@
         <attr name="petal_border_size" format="dimension" />
         <attr name="petal_margin" format="dimension" />
         <attr name="petal_top_style" format="enum">
-            <enum name="flat" value="0"/>
-            <enum name="sector" value="1"/>
+            <enum name="flat" value="0" />
+            <enum name="sector" value="1" />
         </attr>
         <attr name="petal_bottom_size" format="enum">
-            <enum name="flat" value="0"/>
-            <enum name="sector" value="1"/>
+            <enum name="flat" value="0" />
+            <enum name="sector" value="1" />
         </attr>
         <attr name="petal_bottom_radius" format="dimension" />
-        <!--gris attrs-->
-        <attr name="grid_text_color" format="color"/>
-        <attr name="grid_line_color" format="color"/>
-        <attr name="grid_text_size" format="dimension"/>
-        <attr name="grid_line_size" format="dimension"/>
+        <!--grid attrs-->
+        <attr name="grid_circles_number" format="integer" />
+        <attr name="grid_text_color" format="color" />
+        <attr name="grid_line_color" format="color" />
+        <attr name="grid_text_size" format="dimension" />
+        <attr name="grid_line_size" format="dimension" />
     </declare-styleable>
 
     <declare-styleable name="WindDirectionGrid">
-        <attr name="text_size" format="dimension"/>
-        <attr name="grid_size" format="dimension"/>
-        <attr name="grid_color" format="color"/>
-        <attr name="text_color" format="color"/>
+        <attr name="text_size" format="dimension" />
+        <attr name="grid_size" format="dimension" />
+        <attr name="grid_color" format="color" />
+        <attr name="text_color" format="color" />
+        <attr name="circles_number" format="integer" />
     </declare-styleable>
 
     <declare-styleable name="Petal">
@@ -75,12 +77,12 @@
             <enum name="percent_100" value="10" />
         </attr>
         <attr name="petal_topStyle" format="enum">
-            <enum name="flat" value="0"/>
-            <enum name="sector" value="1"/>
+            <enum name="flat" value="0" />
+            <enum name="sector" value="1" />
         </attr>
         <attr name="petal_bottomStyle" format="enum">
-            <enum name="flat" value="0"/>
-            <enum name="sector" value="1"/>
+            <enum name="flat" value="0" />
+            <enum name="sector" value="1" />
         </attr>
         <attr name="petal_bottomRadius" format="dimension" />
     </declare-styleable>

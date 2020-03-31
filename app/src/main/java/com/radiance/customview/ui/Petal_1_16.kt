@@ -13,16 +13,6 @@ import com.radiance.winddirections.petal.Petal
 import com.radiance.customview.windDirections.petal.toBottomStyle
 import com.radiance.customview.windDirections.petal.toTopStyle
 import kotlinx.android.synthetic.main.fragment_petal_1_16.*
-import kotlinx.android.synthetic.main.fragment_petal_1_16.borderSeek
-import kotlinx.android.synthetic.main.fragment_petal_1_16.borderTitle
-import kotlinx.android.synthetic.main.fragment_petal_1_16.bottomRadiusSeek
-import kotlinx.android.synthetic.main.fragment_petal_1_16.bottomRadiusTitle
-import kotlinx.android.synthetic.main.fragment_petal_1_16.bottomStyleSeek
-import kotlinx.android.synthetic.main.fragment_petal_1_16.bottomStyleTitle
-import kotlinx.android.synthetic.main.fragment_petal_1_16.marginSeek
-import kotlinx.android.synthetic.main.fragment_petal_1_16.marginTitle
-import kotlinx.android.synthetic.main.fragment_petal_1_16.topStyleSeek
-import kotlinx.android.synthetic.main.fragment_petal_1_16.topStyleTitle
 
 class Petal_1_16 : Fragment() {
     private var topStyle = Petal.TopStyle.Sector
@@ -48,8 +38,7 @@ class Petal_1_16 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        topStyleTitle.text = "${getString(R.string.topstyle)} (${styleString(topStyle)})"
-        topStyleSeek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        sbTop.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 topStyle = progress.toTopStyle()
                 setStyle()
@@ -63,8 +52,7 @@ class Petal_1_16 : Fragment() {
 
         })
 
-        bottomStyleTitle.text = "${getString(R.string.bottomstyle)} (${styleString(bottomStyle)})"
-        bottomStyleSeek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        sbBottom.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 bottomStyle = progress.toBottomStyle()
                 setStyle()
@@ -78,8 +66,7 @@ class Petal_1_16 : Fragment() {
 
         })
 
-        bottomRadiusTitle.text = "${getString(R.string.bottomradius)} (${bottomRadius})"
-        bottomRadiusSeek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        sbBottomRadius.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 bottomRadius = progress
                 setStyle()
@@ -93,8 +80,7 @@ class Petal_1_16 : Fragment() {
 
         })
 
-        marginTitle.text = "${getString(R.string.margin)} (${margin})"
-        marginSeek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        sbMargin.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 margin = progress
                 setStyle()
@@ -108,8 +94,7 @@ class Petal_1_16 : Fragment() {
 
         })
 
-        borderTitle.text = "${getString(R.string.border)} (${border})"
-        borderSeek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        sbBorder.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 border = progress
                 setStyle()
@@ -149,12 +134,6 @@ class Petal_1_16 : Fragment() {
 
     @SuppressLint("SetTextI18n")
     private fun setStyle() {
-        topStyleTitle.text = "${getString(R.string.topstyle)} (${styleString(topStyle)})"
-        bottomStyleTitle.text = "${getString(R.string.bottomstyle)} (${styleString(bottomStyle)})"
-        bottomRadiusTitle.text = "${getString(R.string.bottomradius)} (${bottomRadius})"
-        marginTitle.text = "${getString(R.string.margin)} (${margin})"
-        borderTitle.text = "${getString(R.string.border)} (${border})"
-
         sixteen.petalMargin = margin.toFloat()
         sixteen.petalBorder = border.toFloat()
         sixteen.topStyle = topStyle

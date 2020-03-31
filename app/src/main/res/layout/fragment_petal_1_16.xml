@@ -4,129 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.Petal_1_16">
+
+    <com.radiance.customview.ui.SeekBarWithTextView
+        android:id="@+id/sbTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:max="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleSeekBar="@string/topstyle" />
+
+
+    <com.radiance.customview.ui.SeekBarWithTextView
+        android:id="@+id/sbBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:max="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sbTop"
+        app:titleSeekBar="@string/bottomstyle" />
+
+
+    <com.radiance.customview.ui.SeekBarWithTextView
+        android:id="@+id/sbBottomRadius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:max="50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sbBottom"
+        app:titleSeekBar="@string/bottomradius" />
+
+
+    <com.radiance.customview.ui.SeekBarWithTextView
+        android:id="@+id/sbMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:max="50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.253"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sbBottomRadius"
+        app:titleSeekBar="@string/margin" />
+
+    <com.radiance.customview.ui.SeekBarWithTextView
+        android:id="@+id/sbBorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:max="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.276"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sbMargin"
+        app:titleSeekBar="@string/border" />
 
     <com.radiance.winddirections.WindDirections
         android:id="@+id/sixteen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         app:directionsCount="sixteen"
         app:grid_circles_number="5"
-        app:petal_color="@color/colorAccent"/>
-
-    <TextView
-        android:id="@+id/topStyleTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/topstyle"
-        app:layout_constraintEnd_toStartOf="@+id/topStyleSeek"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/topStyleSeek" />
-
-    <SeekBar
-        android:id="@+id/topStyleSeek"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:max="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/bottomStyleTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/bottomstyle"
-        app:layout_constraintEnd_toStartOf="@+id/bottomStyleSeek"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bottomStyleSeek" />
-
-    <SeekBar
-        android:id="@+id/bottomStyleSeek"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:max="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topStyleSeek" />
-
-    <TextView
-        android:id="@+id/bottomRadiusTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/bottomradius"
-        app:layout_constraintEnd_toStartOf="@+id/bottomRadiusSeek"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bottomRadiusSeek" />
-
-    <SeekBar
-        android:id="@+id/bottomRadiusSeek"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:max="50"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bottomStyleSeek" />
-
-    <TextView
-        android:id="@+id/marginTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/margin"
-        app:layout_constraintEnd_toStartOf="@+id/marginSeek"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/marginSeek" />
-
-    <SeekBar
-        android:id="@+id/marginSeek"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:max="50"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bottomRadiusSeek" />
-
-    <TextView
-        android:id="@+id/borderTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/border"
-        app:layout_constraintEnd_toStartOf="@+id/borderSeek"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/borderSeek" />
-
-    <SeekBar
-        android:id="@+id/borderSeek"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:max="10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/marginSeek" />
-
-    <TextView
-        android:id="@+id/topLeftRadiusTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/topledtradius"
-        app:layout_constraintEnd_toStartOf="@+id/topLeftRadiusSeek"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/topLeftRadiusSeek" />
-
-    <SeekBar
-        android:id="@+id/topLeftRadiusSeek"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:max="50"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sbBorder"
+        app:petal_color="@color/colorAccent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,24 +1,16 @@
 package com.radiance.customview.ui
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
-import androidx.annotation.ColorInt
+import androidx.fragment.app.Fragment
 import com.larswerkman.lobsterpicker.OnColorListener
-
 import com.radiance.customview.R
-import com.radiance.customview.windDirections.petal.toTopStyle
 import kotlinx.android.synthetic.main.grid_features_fragment.*
 
 class GridFeatures : Fragment() {
-
-    companion object {
-        fun newInstance() = GridFeatures()
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,7 +35,7 @@ class GridFeatures : Fragment() {
 
         })
 
-        textColor.addOnColorListener( object : OnColorListener {
+        textColor.addOnColorListener(object : OnColorListener {
 
             override fun onColorChanged(color: Int) {
                 sixteen.gridTextColor = color
@@ -66,7 +58,7 @@ class GridFeatures : Fragment() {
 
         })
 
-        borderColor.addOnColorListener( object : OnColorListener {
+        borderColor.addOnColorListener(object : OnColorListener {
 
             override fun onColorChanged(color: Int) {
                 sixteen.gridLineColor = color
@@ -74,7 +66,20 @@ class GridFeatures : Fragment() {
 
             override fun onColorSelected(color: Int) {
             }
-        });
+        })
+
+        circlesNumber.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                sixteen.gridCirclesNumber = progress
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+            }
+
+        })
     }
 
 }

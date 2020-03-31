@@ -23,14 +23,14 @@
         app:directionsCount="sixteen"
         app:petal_color="@color/colorAccent"/>
 
-    <SeekBar
+    <com.radiance.customview.ui.SeekBarWithTextView
         android:id="@+id/petal_border_size"
-        android:layout_width="240dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:max="15"
+        app:max="15"
+        app:titleSeekBar="petalBorderSize"
         android:layout_margin="15dp"
-        android:layout_gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

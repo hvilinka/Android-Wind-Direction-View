@@ -33,13 +33,6 @@ class MainActivity : AppCompatActivity() {
                     .commit()
                 false
             }
-            R.id.fragment_1_8 -> {
-                supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.fragment_place, Petal_1_8(), null)
-                    .commit()
-                false
-            }
             R.id.grid_features -> {
                 supportFragmentManager
                     .beginTransaction()
@@ -70,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.fragment_place, Petal_1_8(), null)
+            .replace(R.id.fragment_place, Petal_1_16(), null)
             .commit()
     }
 }

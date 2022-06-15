@@ -4,15 +4,15 @@
 * [Overview](#overview)
 * [Setup](#setup)
 * [Features](#features)
-  * [Directions](#directions)
-  * [Grid](#grid)
-    * [Text](#text)
-    * [Lines](#lines)
-  * [Petal](#petal)
-    * [Top Style](#top_style)
-    * [Bottom Style](#bottom_style)
-  * [Margin](#margin)
-  * [Bottom Radius](#bottom_radius)
+    * [Margin](#margin)
+    * [Bottom Radius](#bottom_radius)
+    * [Petal](#petal)
+        * [Top Style](#top_style)
+        * [Bottom Style](#bottom_style)
+    * [Directions](#directions)
+    * [Grid](#grid)
+        * [Text](#text)
+        * [Lines](#lines)
 
 <a name="overview"/>
 
@@ -22,7 +22,7 @@
 
 # Setup
 
-build.gradle 
+build.gradle
 
 ```grovy
 dependencies {
@@ -74,7 +74,53 @@ windDirections.windPower = windPower
 
 # Features
 
+ <a name="margin"/> 
+
+## Margin
+
+| Value         | Sample        | XML property  | Kotlin property |
+ | :-----------: |:-------------:|:-------------:|:---------------:|
+| margin | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/margin.gif) | app:petal_margin="2dp" | wdView.petalMargin = 4.0 |
+
+ <a name="bottom_radius"/> 
+
+## Bottom Radius
+
+| Value         | Sample        | XML property  | Kotlin property |
+ | :-----------: |:-------------:|:-------------:|:---------------:|
+| radius | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/bottom.gif) | app:petal_bottom_radius="4dp" | wdView.bottomRadius = 4.0 |
+
+
 <a name="directions"/>
+
+<a name="petal"/>
+
+## Petal
+
+| Value         | Sample        | XML property  | Kotlin property |
+ | :-----------: |:-------------:|:-------------:|:---------------:|
+| color | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/petal_color.gif) | app:petal_color="@color/colorAccent" | wdView.petalColor = color |
+| border size | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/petal_border_size.gif) | app:petal_border_size="2dp" | wdView.petalBorder = 3.0 |
+| border color | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/petal_border_color.gif) | app:petal_border_color="#000000" | wdView.petalBorderColor = color |
+
+<a name="top_style"/>  
+
+### Top Style
+
+| Value         | Sample        | XML property  | Kotlin property |
+ | :-----------: |:-------------:|:-------------:|:---------------:|
+| sector | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/pot_style_sector.jpg) | app:petal_top_style="sector" | wdView.topStyle = Petal.TopStyle.Sector |
+| flat | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/top_style_flat.jpg) | app:petal_top_style="flat" | wdView.topStyle = Petal.TopStyle.Flat |
+
+
+ <a name="bottom_style"/> 
+
+### Bottom Style
+
+| Value         | Sample        | XML property  | Kotlin property |
+ | :-----------: |:-------------:|:-------------:|:---------------:|
+| sector | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/bottom_style_sector.jpg) | app:petal_bottom_style="sector" | wdView.bottomStyle = Petal.BottomStyle.Sector |
+| flat | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/bottom_style_flat.jpg) | app:petal_bottom_style="flat" | wdView.bottomStyle = Petal.BottomStyle.Flat |
 
 ## Directions
 
@@ -91,61 +137,17 @@ windDirections.windPower = windPower
 
 ### Text
 
- | Value         | Sample        | XML property  | Kotlin property |
+| Value         | Sample        | XML property  | Kotlin property |
  | ------------- |:-------------:|:-------------:|:---------------:|
- |size     | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/text_size.gif) | app:grid_text_size="18dp" | wdView.gridTextSize = 10.0 |
- | color    | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/text_color.gif) | app:grid_text_color="#000000" | wdView.gridTextColor = color |
+|size     | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/text_size.gif) | app:grid_text_size="18dp" | wdView.gridTextSize = 10.0 |
+| color    | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/text_color.gif) | app:grid_text_color="#000000" | wdView.gridTextColor = color |
 
 
 <a name="lines"/>
 
 ### Lines
 
- | Value         | Sample        | XML property  | Kotlin property |
+| Value         | Sample        | XML property  | Kotlin property |
  | ------------- |:-------------:|:-------------:|:---------------:|
- |size     | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/grid_size.gif) | app:grid_line_size="1dp" | wdView.gridLineSize = 3.0 |
- | color    | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/grid_color.gif) | app:grid_line_color="#000000" | wdView.gridLineColor = color |
-
-<a name="petal"/>
-
-## Petal
-
- | Value         | Sample        | XML property  | Kotlin property |
- | :-----------: |:-------------:|:-------------:|:---------------:|
- | color | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/petal_color.gif) | app:petal_color="@color/colorAccent" | wdView.petalColor = color |
- | border size | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/petal_border_size.gif) | app:petal_border_size="2dp" | wdView.petalBorder = 3.0 |
-  | border color | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/petal_border_color.gif) | app:petal_border_color="#000000" | wdView.petalBorderColor = color |
-  
-<a name="top_style"/>  
-  
-### Top Style
-
- | Value         | Sample        | XML property  | Kotlin property |
- | :-----------: |:-------------:|:-------------:|:---------------:|
- | sector | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/pot_style_sector.jpg) | app:petal_top_style="sector" | wdView.topStyle = Petal.TopStyle.Sector |
- | flat | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/top_style_flat.jpg) | app:petal_top_style="flat" | wdView.topStyle = Petal.TopStyle.Flat |
- 
- <a name="bottom_style"/> 
- 
- ### Bottom Style
-
- | Value         | Sample        | XML property  | Kotlin property |
- | :-----------: |:-------------:|:-------------:|:---------------:|
- | sector | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/bottom_style_sector.jpg) | app:petal_bottom_style="sector" | wdView.bottomStyle = Petal.BottomStyle.Sector |
- | flat | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/bottom_style_flat.jpg) | app:petal_bottom_style="flat" | wdView.bottomStyle = Petal.BottomStyle.Flat |
- 
- <a name="margin"/> 
- 
- ## Margin
- 
- | Value         | Sample        | XML property  | Kotlin property |
- | :-----------: |:-------------:|:-------------:|:---------------:|
- | margin | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/margin.gif) | app:petal_margin="2dp" | wdView.petalMargin = 4.0 |
- 
- <a name="bottom_radius"/> 
- 
- ## Bottom Radius
- 
-  | Value         | Sample        | XML property  | Kotlin property |
- | :-----------: |:-------------:|:-------------:|:---------------:|
- | radius | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/bottom.gif) | app:petal_bottom_radius="4dp" | wdView.bottomRadius = 4.0 |
+|size     | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/grid_size.gif) | app:grid_line_size="1dp" | wdView.gridLineSize = 3.0 |
+| color    | ![eight](https://github.com/KessoPavel/images/blob/master/Wind-Direction-View/grid_color.gif) | app:grid_line_color="#000000" | wdView.gridLineColor = color |
